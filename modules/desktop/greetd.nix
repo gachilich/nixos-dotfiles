@@ -1,0 +1,14 @@
+{ pkgs, ... }:
+
+{
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.tuigreet}/bin/tuigreet --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red' --time --remember --cmd niri-session";
+        user = "greeter";
+      };
+    };
+  };
+  systemd.services.greetd.serviceConfig.Type = "idle";
+}
