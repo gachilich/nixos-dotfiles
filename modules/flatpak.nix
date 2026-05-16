@@ -8,8 +8,6 @@
     update.onActivation = true;
     packages = [
       { appId = "org.libreoffice.LibreOffice"; origin = "flathub"; }
-      { appId = "ru.linux_gaming.PortProton"; origin = "flathub"; }
-      { appId = "com.github.Matoking.protontricks"; origin = "flathub"; }
     ];
   };
 

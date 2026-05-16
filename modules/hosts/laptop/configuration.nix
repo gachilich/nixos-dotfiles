@@ -6,14 +6,25 @@
     ./hardware-configuration.nix
   ];
 
+  boot.loader.grub.mirroredBoots = [];
+
   boot.kernel.sysctl = {
     "net.core.default_qdisc" = "fq";
     "net.ipv4.tcp_congestion_control" = "bbr";
   };
+
+  boot.supportedFilesystems = [ "ntfs" ];
+
   fileSystems."/mnt/data" = {
     device = "/dev/disk/by-uuid/ed0bf9b7-4055-46be-b770-ea6c4b371771";
     fsType = "ext4";
     options = [ "defaults" "nofail" ];
+  };
+
+  fileSystems."/mnt/windows" = {
+    device = "/dev/disk/by-uuid/0C02B4C002B4B056";
+    fsType = "ntfs3";
+    options = [ "rw" "uid=1000" "nofail" ]; # Replace 1000 with your UID
   };
 
 
@@ -76,20 +87,21 @@
     wget
     btop
     gcc
-    git
     fd
     eza
     duf
     bat
+    unzip
+    python3
     tealdeer
     mesa-demos
     qbittorrent-enhanced
-    wine
     winetricks
     telegram-desktop
     openssl
     obsidian
     ffmpeg
+    efibootmgr
     ];
 
   fonts.packages = with pkgs; [

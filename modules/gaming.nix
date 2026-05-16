@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ pkgs, inputs, ...}:
 {
 
   programs.steam = {
@@ -12,7 +12,6 @@
   hardware.steam-hardware.enable = true;
 
   environment.systemPackages = with pkgs; [
-  steam
   lutris
   mangohud
   prismlauncher
