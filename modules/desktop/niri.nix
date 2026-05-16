@@ -30,6 +30,7 @@
     zoxide
     obsidian
     mako
+    mesa-demos
     kdePackages.ark
   ];
 

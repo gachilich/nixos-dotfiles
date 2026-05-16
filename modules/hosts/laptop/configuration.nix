@@ -90,11 +90,6 @@
     fd
     eza
     duf
-    bat
-    unzip
-    python3
-    tealdeer
-    mesa-demos
     qbittorrent-enhanced
     winetricks
     telegram-desktop
