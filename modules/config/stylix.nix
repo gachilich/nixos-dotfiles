@@ -4,7 +4,7 @@
     enable = true;
     polarity = "light";
     image = ../../nixpics/Wallpapers/wallhaven_1qdk61.jpg;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-light-soft.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-light-medium.yaml";
     targets.grub.enable = false;
   };
   stylix.fonts = {
@@ -27,7 +27,7 @@
   stylix = {
     polarity = pkgs.lib.mkForce "dark";
     image = lib.mkForce ../../nixpics/Wallpapers/wallhaven-85eqe2.png;
-    base16Scheme = pkgs.lib.mkForce "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    base16Scheme = pkgs.lib.mkForce "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
     };
   };
 }
