@@ -4,7 +4,7 @@
     enable = true;
     polarity = "light";
     image = ../../nixpics/Wallpapers/wallhaven_1qdk61.jpg;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-light-medium.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-light-soft.yaml";
     targets.grub.enable = false;
   };
   stylix.fonts = {
