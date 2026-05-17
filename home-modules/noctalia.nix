@@ -24,7 +24,7 @@
         position = "top";
         showCapsule = true;
         hideOnOverview = false;
-        marginVertical = 10;
+        marginVertical = 7;
         marginHorizontal = 25;
         widgets = {
           left = [
