@@ -22,7 +22,7 @@
   };
 
   fileSystems."/mnt/windows" = {
-    device = "/dev/disk/by-uuid/0C02B4C002B4B056";
+    device = "/dev/disk/by-uuid/282CEB042CEACC3E";
     fsType = "ntfs3";
     options = [ "rw" "uid=1000" "nofail" ]; # Replace 1000 with your UID
   };
@@ -85,16 +85,12 @@
 
   environment.systemPackages = with pkgs; [
     wget
-    btop
     gcc
     fd
     eza
     duf
-    qbittorrent-enhanced
     winetricks
-    telegram-desktop
     openssl
-    obsidian
     ffmpeg
     efibootmgr
   ];

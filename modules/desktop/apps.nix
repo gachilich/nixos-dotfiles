@@ -19,6 +19,9 @@
     mako
     kdePackages.ark
     gparted
+    qbittorrent-enhanced
+    telegram-desktop
+    btop
   ];
 
   environment.variables = {
