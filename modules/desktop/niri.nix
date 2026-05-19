@@ -7,37 +7,17 @@
   };
 
   services.dbus.enable = true;
-  programs.xwayland.enable = true;
+  #programs.xwayland.enable = true;
   services.tumbler.enable = true;
-  services.gvfs.enable = true;
   programs.xfconf.enable = true;
   programs.dconf.enable = true;
 
   environment.systemPackages = with pkgs; [
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     xwayland-satellite
-    wl-clipboard
-    timg
-    mpv
-    qimgv
-    awww
-    strawberry
-    mpvpaper
     libsForQt5.qt5ct
-    superfile
-    thunar
-    rose-pine-cursor
-    zoxide
-    obsidian
-    mako
     mesa-demos
-    kdePackages.ark
   ];
-
-  environment.variables = {
-    XCURSOR_THEME = "BreezeX-RosePine-Linux";
-    XCURSOR_SIZE = "24";
-  };
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";

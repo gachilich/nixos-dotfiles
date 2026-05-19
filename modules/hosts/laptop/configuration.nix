@@ -77,7 +77,7 @@
   users.users.gachilich = {
     isNormalUser = true;
     shell = pkgs.fish;
-    extraGroups = [ "wheel" "audio" "sound" "video" "realtime" "i2c" ];
+    extraGroups = [ "wheel" "audio" "sound" "video" "realtime" "i2c" "docker" ];
     packages = with pkgs; [ tree ];
   };
 
@@ -97,7 +97,11 @@
     obsidian
     ffmpeg
     efibootmgr
-    ];
+  ];
+
+  virtualisation.docker = {
+    enable = true;
+  };
 
   fonts.packages = with pkgs; [
     noto-fonts

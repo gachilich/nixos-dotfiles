@@ -21,6 +21,7 @@
       "audio/flac"              = "org.strawberrymusicplayer.strawberry.desktop";
       "application/zip"         = "org.kde.ark.desktop";
       "application/x-tar"       = "org.kde.ark.desktop";
+      "x-scheme-handler/terminal"= "kitty.desktop";
     };
   };
 }
