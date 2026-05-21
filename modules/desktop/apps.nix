@@ -23,10 +23,4 @@
     telegram-desktop
     btop
   ];
-
-  environment.variables = {
-    XCURSOR_THEME = "BreezeX-RosePine-Linux";
-    XCURSOR_SIZE = "24";
-  };
-
 }

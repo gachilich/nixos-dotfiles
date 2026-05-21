@@ -8,6 +8,12 @@
     targets.grub.enable = false;
   };
 
+  stylix.cursor = {
+    name = "BreezeX-RosePine-Linux";
+    package = pkgs.rose-pine-cursor;
+    size = 32;
+  };
+
   stylix.fonts = {
      sansSerif = {
        package = pkgs.maple-mono.NF;
@@ -24,6 +30,7 @@
        name = "Noto Color Emoji";
      };
     };
+
   specialisation.dark.configuration = {
   stylix = {
     polarity = pkgs.lib.mkForce "dark";
