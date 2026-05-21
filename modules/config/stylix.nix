@@ -7,6 +7,7 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-light-soft.yaml";
     targets.grub.enable = false;
   };
+
   stylix.fonts = {
      sansSerif = {
        package = pkgs.maple-mono.NF;

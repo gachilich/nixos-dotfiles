@@ -4,7 +4,7 @@
   enable = true;
   settings = {
     logo = {
-      source = "~/nixos-dotfiles/nixpics/nixlogo.png";
+      source = "~/nixos-dotfiles/nixpics/nixlogorainbow.png";
       type = "auto";
       width = 24;
       height = 12;

@@ -7,6 +7,8 @@
   nixclear = "sudo nix-collect-garbage -d";
   nixgit = "git add -A && git commit -m";
   gpart = "sudo -E WAYLAND_DISPLAY=$WAYLAND_DISPLAY XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR gparted";
+  awww-light = "awww /home/gachilich/nixos-dotfiles/nixpics/Wallpapers/wallhaven_1qdk61.jpg";
+  awww-dark = "awww /home/gachilich/nixos-dotfiles/nixpics/Wallpapers/wallhaven-85eqe2.png";
   };
 
 

@@ -1,4 +1,4 @@
-{ pkgs, inputs, ...}:{
+{ pkgs, inputs, lib, ...}:{
 
 
   programs.niri= {
@@ -18,6 +18,8 @@
     libsForQt5.qt5ct
     mesa-demos
   ];
+
+  services.xserver.excludePackages = [ pkgs.xterm ];
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";

@@ -95,10 +95,6 @@
     efibootmgr
   ];
 
-  virtualisation.docker = {
-    enable = true;
-  };
-
   fonts.packages = with pkgs; [
     noto-fonts
     ipafont
