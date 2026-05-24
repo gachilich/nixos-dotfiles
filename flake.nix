@@ -13,6 +13,8 @@
 
     niri.url = "github:sodiboo/niri-flake";
 
+    mangowm.url = "github:mangowm/mango";
+
     noctalia.url = "github:noctalia-dev/noctalia-shell";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";

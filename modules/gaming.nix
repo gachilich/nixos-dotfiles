@@ -12,7 +12,6 @@
   hardware.steam-hardware.enable = true;
 
   environment.systemPackages = with pkgs; [
-  lutris
   mangohud
   prismlauncher
   protonup-qt

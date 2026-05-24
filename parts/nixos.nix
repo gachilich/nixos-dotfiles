@@ -13,6 +13,7 @@
           inputs.home-manager.nixosModules.home-manager
           inputs.nix-flatpak.nixosModules.nix-flatpak
           inputs.niri.nixosModules.niri
+          inputs.mangowm.nixosModules.mango
           inputs.stylix.nixosModules.stylix
         #  inputs.nix-cachyos-kernel.nixosModules.cachyos
           ./overlays.nix

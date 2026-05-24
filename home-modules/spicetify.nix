@@ -37,7 +37,6 @@ in {
       playlistIcons #
       fullAlbumDate
       listPlaylistsWithSong
-      phraseToPlaylist
       history
       lastfm
       betterGenres

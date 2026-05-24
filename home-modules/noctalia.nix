@@ -34,7 +34,7 @@
           ];
           center = [
             {
-              hideUnoccupied = false;
+              hideUnoccupied = true;
               id = "Workspace";
               labelMode = "name";
               characterCount = "7";
