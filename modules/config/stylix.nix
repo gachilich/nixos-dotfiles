@@ -8,6 +8,12 @@
     targets.grub.enable = false;
   };
 
+  stylix.override = {
+    base05 = "3c3836";
+    base04 = "504945";
+    base03 = "665c54";
+  };
+
   stylix.cursor = {
     name = "BreezeX-RosePine-Linux";
     package = pkgs.rose-pine-cursor;

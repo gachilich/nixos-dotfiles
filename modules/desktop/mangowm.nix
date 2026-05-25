@@ -8,6 +8,13 @@
 
   programs.mango.enable = true;
 
+  environment.systemPackages = with pkgs; [
+    grim
+    slurp
+    satty
+    wayfreeze
+  ];
+
   xdg.portal = {
     enable = true;
     extraPortals = [
