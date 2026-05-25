@@ -29,4 +29,7 @@
       };
     };
   };
+  environment.sessionVariables = {
+    WLR_DRM_NO_ATOMIC = "1";
+  };
 }

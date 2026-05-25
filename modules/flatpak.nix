@@ -9,10 +9,11 @@
     packages = [
       { appId = "org.libreoffice.LibreOffice"; origin = "flathub"; }
       { appId = "ru.linux_gaming.PortProton"; origin = "flathub"; }
+      { appId = "org.gnome.SimpleScan"; origin = "flathub"; }
+      { appId = "org.localsend.localsend_app"; origin = "flathub"; }
+      { appId = "com.github.tchx84.Flatseal"; origin = "flathub"; }
     ];
   };
-
-  # Убеждаемся что flatpak-сервис ждёт сети
   systemd.services.flatpak-managed-install = {
     after = [ "network-online.target" ];
     wants = [ "network-online.target" ];

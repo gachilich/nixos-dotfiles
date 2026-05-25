@@ -31,20 +31,22 @@
   zramSwap.enable = true;
 
   hardware.bluetooth = {
-  enable = true;
-  powerOnBoot = true;
-  settings = {
-    General = {
-      Experimental = true;
-      FastConnectable = true;
-    };
-    Policy = {
-      AutoEnable = false;
+   enable = true;
+   powerOnBoot = true;
+   settings = {
+     General = {
+       Experimental = true;
+       FastConnectable = true;
+     };
+     Policy = {
+       AutoEnable = false;
      };
     };
   };
 
   services.printing.enable = true;
+  hardware.sane.enable = true;
+  hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
 
   services.ipp-usb.enable = true;
 
@@ -77,7 +79,7 @@
   users.users.gachilich = {
     isNormalUser = true;
     shell = pkgs.fish;
-    extraGroups = [ "wheel" "audio" "sound" "video" "realtime" "i2c" "docker" ];
+    extraGroups = [ "wheel" "audio" "sound" "video" "realtime" "i2c" "docker" "scanner" "lp" ];
     packages = with pkgs; [ tree ];
   };
 

@@ -6,7 +6,7 @@ let
     { lib, ... }:
     {
       imports = [ config.stylix.targets.nixvim.exportedModule ];
-
+      plugins.render-markdown.settings.latex.enabled = false;
       plugins.obsidian.settings.workspaces = [
         {
           name = "araOBSIDIAN";
@@ -17,7 +17,11 @@ let
   );
 in
 {
-  environment.systemPackages = [ nvix-themed ];
+  environment.systemPackages = [
+    nvix-themed
+    pkgs.lazygit
+    pkgs.tree-sitter
+  ];
 
   stylix.targets.nixvim.colors.enable = true;
   stylix.targets.nixvim.enable = true;

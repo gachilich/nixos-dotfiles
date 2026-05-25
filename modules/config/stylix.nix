@@ -8,11 +8,11 @@
     targets.grub.enable = false;
   };
 
-  stylix.override = {
-    base05 = "3c3836";
-    base04 = "504945";
-    base03 = "665c54";
-  };
+
+
+
+
+
 
   stylix.cursor = {
     name = "BreezeX-RosePine-Linux";
@@ -21,19 +21,25 @@
   };
 
   stylix.fonts = {
+
+    serif = {
+      package = pkgs.maple-mono.NF;
+      name = "MapleMono-NF";
+    };
+
      sansSerif = {
-       package = pkgs.maple-mono.NF;
-       name = "MapleMono-NF";
+      package = pkgs.maple-mono.NF;
+      name = "MapleMono-NF";
      };
 
      monospace = {
-       package = pkgs.maple-mono.NF;
-       name = "MapleMono-NF";
+      package = pkgs.maple-mono.NF;
+      name = "MapleMono-NF";
      };
 
      emoji = {
-       package = pkgs.noto-fonts-color-emoji;
-       name = "Noto Color Emoji";
+      package = pkgs.noto-fonts-color-emoji;
+      name = "Noto Color Emoji";
      };
     };
 
