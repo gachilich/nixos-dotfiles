@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
     reaper
@@ -7,6 +7,7 @@
     pkgs.vital
     wineWow64Packages.yabridge
   ];
+
   environment.sessionVariables.LD_LIBRARY_PATH = [
     "${pkgs.freetype}/lib"
     "${pkgs.libpng}/lib"

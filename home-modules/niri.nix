@@ -1,5 +1,4 @@
 { config, ... }:
-
 let
   A = config.lib.niri.actions;
 in
@@ -11,7 +10,6 @@ in
       size = 30;
     };
 
-    # ── Autostart ────────────────────────────────────────────────────────────
     spawn-at-startup = [
       { command = [ "noctalia-shell" ]; }
       { command = [ "zen-twilight" ]; }
@@ -25,38 +23,17 @@ in
 
     screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
 
-    # NOTE: top-level `blur {}` (global blur defaults) is not exposed in
-    # niri-flake settings. Defaults: passes=3 offset=3.0 noise=0.02
-    # saturation=1.5. To override, you must use programs.niri.config (raw KDL)
-    # instead of programs.niri.settings.
-
-    # ── Named Workspaces ─────────────────────────────────────────────────────
     workspaces = {
       "browser" = { };
       "DiSpot"  = { };
     };
 
-    # ── Layer Rules ──────────────────────────────────────────────────────────
-  layer-rules = [
-  #    {
-  #      matches = [
-  #        { layer = "top"; }
-  #        { layer = "overlay"; }
-  #      ];
-  #      background-effect.xray = false;
-  #    }
-  #    {
-  #      matches = [{ namespace = "^launcher$"; }];
-  #      background-effect = {
-  #        blur = true;
-  #        xray = false;
-  #      };
-  #    }
+    layer-rules = [
       {
         matches = [{ namespace = "^awww-daemon"; }];
       }
     ];
-    # ── Window Rules ─────────────────────────────────────────────────────────
+
     window-rules = [
       {
         matches = [{ app-id = "zen-twilight"; }];
@@ -103,7 +80,6 @@ in
       }
      ];
 
-    # ── Input ────────────────────────────────────────────────────────────────
     input = {
       keyboard = {
         xkb = {
@@ -124,7 +100,6 @@ in
       };
     };
 
-    # ── Outputs ──────────────────────────────────────────────────────────────
     outputs = {
       "eDP-1" = {
         mode = {
@@ -146,7 +121,6 @@ in
       };
     };
 
-    # ── Layout ───────────────────────────────────────────────────────────────
     layout = {
       gaps = 10;
       center-focused-column = "never";
@@ -161,16 +135,11 @@ in
 
       focus-ring = {
         width          = 0;
-       # active.color   = "#a63650";
-       # inactive.color = "#6d4745";
       };
 
       border = {
         enable         = true;
         width          = 1.5;
-       # active.color   = "#a63650";
-       # inactive.color = "#6d4745";
-       # urgent.color   = "#cdd6f4";
       };
 
       shadow = {
@@ -178,13 +147,11 @@ in
         softness = 30;
         spread   = 5;
         offset   = { x = 0; y = 5; };
-       # color    = "#0007";
       };
     };
 
     hotkey-overlay = { };
 
-    # ── Animations ───────────────────────────────────────────────────────────
     animations = {
       workspace-switch.kind.spring = {
         damping-ratio = 1.0;
@@ -211,14 +178,9 @@ in
       };
     };
 
-    # ── Binds ────────────────────────────────────────────────────────────────
     binds = with A; {
 
-      # Settings / overlay
-      "Mod+S".action.spawn     = [ "dms" "settings" ];
-      "Mod+Shift+Slash".action = show-hotkey-overlay;
 
-      # App launchers
       "Mod+Return" = {
         hotkey-overlay.title = "Open a Terminal: kitty";
         action.spawn   = "kitty";
@@ -237,7 +199,6 @@ in
         action.spawn-sh   = "pkill orca || exec orca";
       };
 
-      # Audio
       "XF86AudioRaiseVolume" = {
         allow-when-locked = true;
         action.spawn-sh   = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0";
@@ -255,13 +216,11 @@ in
         action.spawn-sh   = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
       };
 
-      # Media
       "XF86AudioPlay" = { allow-when-locked = true; action.spawn-sh = "playerctl play-pause"; };
       "XF86AudioStop" = { allow-when-locked = true; action.spawn-sh = "playerctl stop"; };
       "XF86AudioPrev" = { allow-when-locked = true; action.spawn-sh = "playerctl previous"; };
       "XF86AudioNext" = { allow-when-locked = true; action.spawn-sh = "playerctl next"; };
 
-      # Brightness
       "XF86MonBrightnessUp" = {
         allow-when-locked = true;
         action.spawn      = [ "brightnessctl" "--class=backlight" "set" "+10%" ];
@@ -271,11 +230,9 @@ in
         action.spawn      = [ "brightnessctl" "--class=backlight" "set" "10%-" ];
       };
 
-      # Overview / close
       "Mod+O" = { repeat = false; action = toggle-overview; };
       "Mod+Q" = { repeat = false; action = close-window; };
 
-      # Focus navigation
       "Mod+Left".action  = focus-column-left;
       "Mod+Down".action  = focus-window-down;
       "Mod+Up".action    = focus-window-up;
@@ -285,7 +242,6 @@ in
       "Mod+K".action     = focus-window-up;
       "Mod+L".action     = focus-column-right;
 
-      # Move columns / windows
       "Mod+Ctrl+Left".action  = move-column-left;
       "Mod+Ctrl+Down".action  = move-window-down;
       "Mod+Ctrl+Up".action    = move-window-up;
@@ -295,13 +251,11 @@ in
       "Mod+Ctrl+K".action     = move-window-up;
       "Mod+Ctrl+L".action     = move-column-right;
 
-      # First / last column
       "Mod+Home".action      = focus-column-first;
       "Mod+End".action       = focus-column-last;
       "Mod+Ctrl+Home".action = move-column-to-first;
       "Mod+Ctrl+End".action  = move-column-to-last;
 
-      # Focus monitor
       "Mod+Shift+Left".action  = focus-monitor-left;
       "Mod+Shift+Down".action  = focus-monitor-down;
       "Mod+Shift+Up".action    = focus-monitor-up;
@@ -311,7 +265,6 @@ in
       "Mod+Shift+K".action     = focus-monitor-up;
       "Mod+Shift+L".action     = focus-monitor-right;
 
-      # Move column to monitor
       "Mod+Shift+Ctrl+Left".action  = move-column-to-monitor-left;
       "Mod+Shift+Ctrl+Down".action  = move-column-to-monitor-down;
       "Mod+Shift+Ctrl+Up".action    = move-column-to-monitor-up;
@@ -321,7 +274,6 @@ in
       "Mod+Shift+Ctrl+K".action     = move-column-to-monitor-up;
       "Mod+Shift+Ctrl+L".action     = move-column-to-monitor-right;
 
-      # Workspace navigation
       "Mod+Page_Down".action      = focus-workspace-down;
       "Mod+Page_Up".action        = focus-workspace-up;
       "Mod+U".action              = focus-workspace-down;
@@ -331,19 +283,16 @@ in
       "Mod+Ctrl+U".action         = move-column-to-workspace-down;
       "Mod+Ctrl+I".action         = move-column-to-workspace-up;
 
-      # Move workspace
       "Mod+Shift+Page_Down".action = move-workspace-down;
       "Mod+Shift+Page_Up".action   = move-workspace-up;
       "Mod+Shift+U".action         = move-workspace-down;
       "Mod+Shift+I".action         = move-workspace-up;
 
-      # Scroll → workspace
       "Mod+WheelScrollDown"      = { cooldown-ms = 150; action = focus-workspace-down; };
       "Mod+WheelScrollUp"        = { cooldown-ms = 150; action = focus-workspace-up; };
       "Mod+Ctrl+WheelScrollDown" = { cooldown-ms = 150; action = move-column-to-workspace-down; };
       "Mod+Ctrl+WheelScrollUp"   = { cooldown-ms = 150; action = move-column-to-workspace-up; };
 
-      # Scroll → column
       "Mod+WheelScrollRight".action      = focus-column-right;
       "Mod+WheelScrollLeft".action       = focus-column-left;
       "Mod+Ctrl+WheelScrollRight".action = move-column-right;
@@ -354,7 +303,6 @@ in
       "Mod+Ctrl+Shift+WheelScrollDown".action = move-column-right;
       "Mod+Ctrl+Shift+WheelScrollUp".action   = move-column-left;
 
-      # Focus workspace by index
       "Mod+1".action.focus-workspace = 1;
       "Mod+2".action.focus-workspace = 2;
       "Mod+3".action.focus-workspace = 3;
@@ -365,7 +313,6 @@ in
       "Mod+8".action.focus-workspace = 8;
       "Mod+9".action.focus-workspace = 9;
 
-      # Move column to workspace by index
       "Mod+Ctrl+1".action.move-column-to-workspace = 1;
       "Mod+Ctrl+2".action.move-column-to-workspace = 2;
       "Mod+Ctrl+3".action.move-column-to-workspace = 3;
@@ -376,13 +323,11 @@ in
       "Mod+Ctrl+8".action.move-column-to-workspace = 8;
       "Mod+Ctrl+9".action.move-column-to-workspace = 9;
 
-      # Column manipulation
       "Mod+BracketLeft".action  = consume-or-expel-window-left;
       "Mod+BracketRight".action = consume-or-expel-window-right;
       "Mod+Comma".action        = consume-window-into-column;
       "Mod+Period".action       = expel-window-from-column;
 
-      # Column / window sizing
       "Mod+R".action       = switch-preset-column-width;
       "Mod+Shift+R".action = switch-preset-window-height;
       "Mod+Ctrl+R".action  = reset-window-height;
@@ -397,21 +342,15 @@ in
       "Mod+Shift+Minus".action.set-window-height  = "-10%";
       "Mod+Shift+Equal".action.set-window-height  = "+10%";
 
-      # Floating
       "Mod+V".action       = toggle-window-floating;
       "Mod+Shift+V".action = switch-focus-between-floating-and-tiling;
 
-      # Tabbed column
       "Mod+W".action = toggle-column-tabbed-display;
 
-      # Screenshots
-      # `screenshot-screen` / `screenshot-window` are not exported in
-      # config.lib.niri.actions, so use the raw attrset form.
       "Print".action.screenshot               = [];
       "Ctrl+Print".action."screenshot-screen" = [];
       "Alt+Print".action."screenshot-window"  = [];
 
-      # Misc
       "Mod+Escape" = {
         allow-inhibiting = false;
         action           = toggle-keyboard-shortcuts-inhibit;

@@ -1,5 +1,5 @@
-{ inputs, lib, ... }:{
-
+{ inputs, lib, ... }:
+{
   imports = [
     inputs.noctalia.homeModules.default
   ];

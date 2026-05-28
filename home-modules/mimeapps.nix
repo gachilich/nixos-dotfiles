@@ -1,4 +1,5 @@
-{ ... }:{
+{ ... }:
+{
   xdg.mimeApps = {
     enable = true;
      defaultApplications = {
@@ -24,6 +25,7 @@
       "x-scheme-handler/terminal" = "kitty.desktop";
     };
   };
+
   home.sessionVariables = {
     TERMINAL = "kitty";
   };

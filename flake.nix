@@ -1,5 +1,5 @@
 {
-  description = "NixOS from Scratch";
+  description = "NixOS from Trash";
 
   inputs = {
 

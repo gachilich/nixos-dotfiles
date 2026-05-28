@@ -1,5 +1,5 @@
-{ pkgs, lib, ... }:{
-
+{ pkgs, lib, ... }:
+{
   services.dbus.enable = true;
   services.tumbler.enable = true;
   programs.xwayland.enable = true;

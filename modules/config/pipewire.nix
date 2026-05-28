@@ -1,11 +1,11 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-  pavucontrol
-  qpwgraph
+    pavucontrol
+    qpwgraph
   ];
 
- services.pipewire = {
+  services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;

@@ -1,4 +1,5 @@
-{ ... }:{
+{ ... }:
+{
   xdg.desktopEntries.nvim = {
     name = "Neovim";
     genericName = "Text Editor";
@@ -35,11 +36,11 @@
     comment = "Edit text files";
   };
   xdg.desktopEntries.btop = {
-  name = "btop";
-  genericName = "System Monitor";
-  exec = "kitty -- btop";
-  terminal = false;
-  icon = "btop";
-  categories = [ "System" "Monitor" ];
+    name = "btop";
+    genericName = "System Monitor";
+    exec = "kitty -- btop";
+    terminal = false;
+    icon = "btop";
+    categories = [ "System" "Monitor" ];
   };
 }

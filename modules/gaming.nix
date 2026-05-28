@@ -1,4 +1,4 @@
-{ pkgs, inputs, ...}:
+{ pkgs, ...}:
 {
 
   programs.steam = {
@@ -12,27 +12,27 @@
   hardware.steam-hardware.enable = true;
 
   environment.systemPackages = with pkgs; [
-  mangohud
-  prismlauncher
-  protonup-qt
-  antimicrox
- ];
+    mangohud
+    prismlauncher
+    protonup-qt
+    antimicrox
+  ];
 
  programs.nix-ld.enable = true;
 
  programs.nix-ld.libraries = with pkgs; [ #for minecraft cleanroom
-  libXi
-  libXtst
-  libX11
-  libXext
-  libXrender
-  libXrandr
-  libXcursor
-  libXinerama
-  fontconfig
-  freetype
-  libGL
-  openal
-  stdenv.cc.cc.lib
-];
+   libXi
+   libXtst
+   libX11
+   libXext
+   libXrender
+   libXrandr
+   libXcursor
+   libXinerama
+   fontconfig
+   freetype
+   libGL
+   openal
+   stdenv.cc.cc.lib
+ ];
 }

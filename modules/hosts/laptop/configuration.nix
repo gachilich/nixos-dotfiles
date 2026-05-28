@@ -28,18 +28,22 @@
   };
 
 
-  zramSwap.enable = true;
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+    memoryPercent = 50;
+  };
 
   hardware.bluetooth = {
    enable = true;
    powerOnBoot = true;
    settings = {
      General = {
-       Experimental = true;
-       FastConnectable = true;
+      Experimental = true;
+      FastConnectable = true;
      };
      Policy = {
-       AutoEnable = false;
+      AutoEnable = false;
      };
     };
   };
