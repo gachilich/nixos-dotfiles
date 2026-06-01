@@ -16,6 +16,7 @@
           radiusRatio = 0.25;
           iRadiusRatio = 0.15;
           boxRadiusRatio = 1;
+          animationSpeed = 0.75;
           screenRadiusRatio = 1;
       };
       bar = {
@@ -24,7 +25,7 @@
         position = "top";
         showCapsule = true;
         hideOnOverview = false;
-        marginVertical = 7;
+        marginVertical = 10;
         marginHorizontal = 25;
         widgets = {
           left = [
@@ -42,6 +43,8 @@
               showApplicationsWhenHovered = true;
               showApplicationsHover =true;
               showBadge = false;
+              colorizeIcons = false;
+              iconScaling = 1;
             }
           ];
           right = [

@@ -18,6 +18,7 @@
     obsidian
     mako
     kdePackages.ark
+    unrar
     gparted
     qbittorrent-enhanced
     telegram-desktop

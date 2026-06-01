@@ -3,14 +3,20 @@
   stylix = {
     enable = true;
     polarity = "light";
-    image = ../../nixpics/Wallpapers/wallhaven_1qdk61.jpg;
+    image = ../../nixpics/Wallpapers/berseks.jpg;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-light-soft.yaml";
     targets.grub.enable = false;
+    opacity = {
+      applications = 0.85;
+      terminal     = 0.70;
+      desktop      = 1.0;
+      popups       = 0.9;
+    };
   };
   stylix.cursor = {
     name = "BreezeX-RosePine-Linux";
     package = pkgs.rose-pine-cursor;
-    size = 32;
+    size = 40;
   };
 
   stylix.fonts = {
@@ -35,7 +41,7 @@
   specialisation.dark.configuration = {
     stylix = {
       polarity = pkgs.lib.mkForce "dark";
-      image = lib.mkForce ../../nixpics/Wallpapers/wallhaven-85eqe2.png;
+      image = lib.mkForce ../../nixpics/Wallpapers/lain.png;
       base16Scheme = pkgs.lib.mkForce "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
     };
   };

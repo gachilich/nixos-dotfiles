@@ -15,7 +15,7 @@
           inputs.niri.nixosModules.niri
           inputs.mangowm.nixosModules.mango
           inputs.stylix.nixosModules.stylix
-        #  inputs.nix-cachyos-kernel.nixosModules.cachyos
+        # inputs.nix-cachyos-kernel.nixosModules.cachyos
           ./overlays.nix
         ];
     };

@@ -1,8 +1,8 @@
 { pkgs, lib, ... }:
 
 let
-  wallpaperLight = "/home/gachilich/nixos-dotfiles/nixpics/Wallpapers/wallhaven_1qdk61.jpg";
-  wallpaperDark  = "/home/gachilich/nixos-dotfiles/nixpics/Wallpapers/wallhaven-85eqe2.png";
+  wallpaperLight = "/home/gachilich/nixos-dotfiles/nixpics/Wallpapers/berseks.jpg";
+  wallpaperDark  = "/home/gachilich/nixos-dotfiles/nixpics/Wallpapers/lain.png";
 
   appsToRestart = [
     { pname = "kitty";   bin = "/etc/profiles/per-user/gachilich/bin/kitty"; }

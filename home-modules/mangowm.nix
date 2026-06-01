@@ -24,6 +24,8 @@
       tap_to_click = 1;
       tap_and_drag = 1;
       drag_lock = 1;
+      drag_corner = 4;
+
       trackpad_natural_scrolling = 1;
       disable_while_typing = 1;
       left_handed = 0;
@@ -53,8 +55,8 @@
 
       border_radius = 3;
       no_radius_when_single = 0;
-      focused_opacity = 1.0;
-      unfocused_opacity = 1.0;
+      focused_opacity = 1;
+      unfocused_opacity = 1;
 
       animations = 1;
       layer_animations = 1;
@@ -62,7 +64,7 @@
       animation_type_close = "slide";
       animation_fade_in = 1;
       animation_fade_out = 1;
-      tag_animation_direction = 1;
+      tag_animation_direction = 0;
       zoom_initial_ratio = 0.4;
       zoom_end_ratio = 0.8;
       fadein_begin_opacity = 0.5;
@@ -139,6 +141,8 @@
       globalcolor = "0xb153a7ff";
       overlaycolor = "0x14a57cff";
 
+      circle_layout = "tile,scroller,grid,dwindle";
+
       tagrule = [
         "id:1,layout_name:tile"
         "id:2,layout_name:scroller"
@@ -155,6 +159,8 @@
         "tags:2,monitor:eDP-1,appid:zen-twilight"
         "tags:1,monitor:eDP-1,appid:vesktop"
         "tags:1,monitor:eDP-1,title:Spotify"
+        "focused_opacity:0.95,unfocused_opacity:0.95,appid:thunar"
+        "focused_opacity:0.8,unfocused_opacity:0.8,appid:kitty"
       ];
 
       bind = [

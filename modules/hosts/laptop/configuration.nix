@@ -99,6 +99,7 @@
     openssl
     ffmpeg
     efibootmgr
+    jq
   ];
 
   fonts.packages = with pkgs; [
