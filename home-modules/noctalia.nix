@@ -39,7 +39,7 @@
               id = "Workspace";
               labelMode = "name";
               characterCount = "7";
-              showApplications = true;
+              showApplications = false;
               showApplicationsWhenHovered = true;
               showApplicationsHover =true;
               showBadge = false;
