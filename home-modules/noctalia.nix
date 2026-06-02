@@ -32,10 +32,20 @@
             {
               id = "SystemMonitor";
             }
+            {
+              id = "plugin:screen-toolkit";
+            }
+            {
+              id = "CustomButton";
+              generalTooltipText = "Theme Switcher";
+              icon = "moon-filled";
+              leftClickExec = "switch-theme dark";
+              rightClickExec = "switch-theme light";
+            }
           ];
           center = [
             {
-              hideUnoccupied = true;
+              hideUnoccupied = false;
               id = "Workspace";
               labelMode = "name";
               characterCount = "7";
@@ -46,10 +56,14 @@
               colorizeIcons = false;
               iconScaling = 1;
             }
+            {
+              id = "plugin:mangowc-layout-switcher";
+            }
           ];
           right = [
             {
               id = "Tray";
+              colorizeIcons = true;
             }
             {
               id = "NotificationHistory";
@@ -158,32 +172,26 @@
         ];
         overviewEnabled = true;
     };
-     # plugins = {
-     #   sources = [
-     #     {
-     #       enabled = true;
-     #       name = "Noctalia Plugins";
-     #       url = "https://github.com/noctalia-dev/noctalia-plugins";
-     #     }
-     #   ];
-     #   states = {
-     #     video-wallpaper = {
-     #       enabled = true;
-     #       sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
-     #     };
-     #   };
-     #   version = 2;
-     # };
-     # pluginSettings = {
-     #   video-wallpaper = {
-     #    activeBackend = "mpvpaper";
-     #     automationMode =  "random";
-     #     volume = 0;
-     #     wallpapersFolder = "~/Pictures/Wallpapers/";
-     #     thumbCacheReady = true;
-     #     enabled = true;
-     #   };
-     #};
+      plugins = {
+        sources = [
+          {
+            enabled = true;
+            name = "Noctalia Plugins";
+            url = "https://github.com/noctalia-dev/noctalia-plugins";
+          }
+        ];
+        states = {
+          screenToolkit = {
+            enabled = true;
+            sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+          };
+          mangowcLayoutSwitcher = {
+            enabled = true;
+            sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+          };
+        };
+        version = 2;
+      };
     };
   };
    stylix.targets.noctalia-shell.enable = true;

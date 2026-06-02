@@ -160,7 +160,6 @@
         "tags:1,monitor:eDP-1,appid:vesktop"
         "tags:1,monitor:eDP-1,title:Spotify"
         "focused_opacity:0.95,unfocused_opacity:0.95,appid:thunar"
-        "focused_opacity:0.8,unfocused_opacity:0.8,appid:kitty"
       ];
 
       bind = [

@@ -55,6 +55,7 @@ xdg.dataFile."icons/Gruvbox-Plus-Light/index.theme".text =
       bluetooth
       nix
       power-profile
+      awww-switcher
     ];
   };
 }

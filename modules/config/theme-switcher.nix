@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 
 let
-  wallpaperLight = "/home/gachilich/nixos-dotfiles/nixpics/Wallpapers/berseks.jpg";
+  wallpaperLight = "/home/gachilich/nixos-dotfiles/nixpics/Wallpapers/berseks.png";
   wallpaperDark  = "/home/gachilich/nixos-dotfiles/nixpics/Wallpapers/lain.png";
 
   appsToRestart = [
