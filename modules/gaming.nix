@@ -1,6 +1,5 @@
 { pkgs, ...}:
 {
-
   programs.steam = {
     enable = true;
     extraCompatPackages = with pkgs; [ proton-ge-bin ];
@@ -18,21 +17,21 @@
     antimicrox
   ];
 
- programs.nix-ld.enable = true;
+  programs.nix-ld.enable = true;
 
- programs.nix-ld.libraries = with pkgs; [ #for minecraft cleanroom
-   libXi
-   libXtst
-   libX11
-   libXext
-   libXrender
-   libXrandr
-   libXcursor
-   libXinerama
-   fontconfig
-   freetype
-   libGL
-   openal
-   stdenv.cc.cc.lib
- ];
+  programs.nix-ld.libraries = with pkgs; [ #for minecraft cleanroom
+    libXi
+    libXtst
+    libX11
+    libXext
+    libXrender
+    libXrandr
+    libXcursor
+    libXinerama
+    fontconfig
+    freetype
+    libGL
+    openal
+    stdenv.cc.cc.lib
+  ];
 }

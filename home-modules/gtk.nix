@@ -18,7 +18,6 @@
     light = "Gruvbox-Plus-Light";
   };
 
-  gtk.gtk4.theme = config.gtk.theme;
   stylix.targets.gtk.enable = true;
   stylix.targets.gtk.colors.enable = true;
 }

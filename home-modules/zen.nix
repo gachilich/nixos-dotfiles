@@ -1,4 +1,4 @@
-{inputs, pkgs, ... }:
+{ inputs, pkgs, ... }:
 let
   firefox-addons = inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system};
 in
@@ -27,45 +27,95 @@ in
       };
     };
     profiles.gachilich = {
-        extensions.packages = with firefox-addons; [
-          ublock-origin
-          bitwarden
-          return-youtube-dislikes
-        ];
-        mods = [
-          "f4866f39-cfd6-4498-ab92-54213b8279dc" #Animations Plus
-          "a6335949-4465-4b71-926c-4a52d34bc9c0" #Better Find Bar
-          "f7c71d9a-bce2-420f-ae44-a64bd92975ab" #Better Unloaded Tabs
-          "664c54f9-d97d-410b-a479-23dd8a08a628" #Better Tab Indicators
-          "a5f6a231-e3c8-4ce8-8a8e-3e93efd6adec" #Cleaned URL bar
-          "3ff55ba7-4690-4f74-96a8-9e4416685e4e" #Colored container tab
-          "b51ff956-6aea-47ab-80c7-d6c047c0d510" #Disable Status Bar
-          "4ab93b88-151c-451b-a1b7-a1e0e28fa7f8" #No Sidebar Scrollbar
-          "e122b5d9-d385-4bf8-9971-e137809097d0" #No Top Sites
-          "5941aefd-67b0-453d-9b62-9071a31cbb0d" #Smaller Compact Mode
-          "570afd9d-96fa-48b5-bad3-0c106757cce9" #Super Sleek UI
-          "642854b5-88b4-4c40-b256-e035532109df" #Transparent Zen (without transparent)
-          "81fcd6b3-f014-4796-988f-6c3cb3874db8" #Zen Context Menu
-        ];
-        search = {
-          force = true;
-          default = "Brave";
-          engines = {
-             "Brave" = {
-                name = "Brave Search";
-                urls = [{
-                template = "https://search.brave.com/search";
-                params = [
-                  { name = "q"; value = "{searchTerms}"; }
-                ];
-              }];
-              icon = "https://cdn.search.brave.com/serp/v2/_app/immutable/assets/brave-search-icon.CsIBfqGk.svg";
-              updateInterval = 24 * 60 * 60 * 1000;
-              definedAliases = [ "@brave" ];
-              };
+      extensions.packages = with firefox-addons; [
+        ublock-origin
+        bitwarden
+        return-youtube-dislikes
+      ];
+      mods = [
+        "f4866f39-cfd6-4498-ab92-54213b8279dc" # Animations Plus
+        "a6335949-4465-4b71-926c-4a52d34bc9c0" # Better Find Bar
+        "f7c71d9a-bce2-420f-ae44-a64bd92975ab" # Better Unloaded Tabs
+        "664c54f9-d97d-410b-a479-23dd8a08a628" # Better Tab Indicators
+        "a5f6a231-e3c8-4ce8-8a8e-3e93efd6adec" # Cleaned URL bar
+        "3ff55ba7-4690-4f74-96a8-9e4416685e4e" # Colored container tab
+        "b51ff956-6aea-47ab-80c7-d6c047c0d510" # Disable Status Bar
+        "4ab93b88-151c-451b-a1b7-a1e0e28fa7f8" # No Sidebar Scrollbar
+        "e122b5d9-d385-4bf8-9971-e137809097d0" # No Top Sites
+        "5941aefd-67b0-453d-9b62-9071a31cbb0d" # Smaller Compact Mode
+        "570afd9d-96fa-48b5-bad3-0c106757cce9" # Super Sleek UI
+        "642854b5-88b4-4c40-b256-e035532109df" # Transparent Zen
+        "81fcd6b3-f014-4796-988f-6c3cb3874db8" # Zen Context Menu
+      ];
+
+      # --- Флаги about:config для прозрачности ---
+      settings = {
+        # Прозрачность интерфейса браузера (тулбар, сайдбар)
+        "zen.widget.linux.transparency" = true;
+        # Прозрачность контента страниц
+        "browser.tabs.allow_transparent_browser" = true;
+        # Отключить серый фон неактивных окон
+        "zen.view.grey-out-inactive-windows" = false;
+        # Разрешить кастомные цвета темы (для полупрозрачного тинта)
+        "zen.theme.gradient.show-custom-colors" = false;
+      };
+
+      # --- userChrome: прозрачность интерфейса браузера ---
+      userChrome = ''
+        #browser,
+        #tabbrowser-tabpanels,
+        .browserContainer {
+          background: transparent !important;
+        }
+      '';
+
+      # --- userContent: прозрачный фон страниц, но не для медиа ---
+      userContent = ''
+        @-moz-document url-prefix("") {
+          /* Прозрачный фон страниц */
+          html, body {
+            background-color: transparent !important;
+            background-image: none !important;
+          }
+
+          /* Изображения — без изменений */
+          img, picture, canvas, svg {
+            opacity: 1 !important;
+            background-color: initial !important;
+          }
+
+          /* Видео и встроенные объекты — без изменений */
+          video, audio, iframe, embed, object {
+            opacity: 1 !important;
+            background-color: initial !important;
+          }
+
+          /* Блоки с background-image в inline-стиле — сохранить фон */
+          [style*="background-image"] {
+            background-color: initial !important;
+          }
+        }
+      '';
+
+      search = {
+        force = true;
+        default = "Brave";
+        engines = {
+          "Brave" = {
+            name = "Brave Search";
+            urls = [{
+              template = "https://search.brave.com/search";
+              params = [
+                { name = "q"; value = "{searchTerms}"; }
+              ];
+            }];
+            icon = "https://cdn.search.brave.com/serp/v2/_app/immutable/assets/brave-search-icon.CsIBfqGk.svg";
+            updateInterval = 24 * 60 * 60 * 1000;
+            definedAliases = [ "@brave" ];
           };
         };
       };
+    };
   };
   stylix.targets.zen-browser.profileNames = [ "gachilich" ];
 }

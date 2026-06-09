@@ -40,9 +40,9 @@
       blur_params_num_passes = 2;
       blur_params_radius = 2;
       blur_params_noise = 0.08;
-      blur_params_brightness = 1;
-      blur_params_contrast = 1;
-      blur_params_saturation = 1;
+      blur_params_brightness = 0.9;
+      blur_params_contrast = 0.9;
+      blur_params_saturation = 1.2;
 
       shadows = 1;
       layer_shadows = 1;
@@ -53,10 +53,11 @@
       shadows_position_y = 5;
       shadowscolor = "0x00000070";
 
-      border_radius = 3;
+      border_radius = 7;
       no_radius_when_single = 0;
-      focused_opacity = 1;
-      unfocused_opacity = 1;
+
+      focused_opacity = 0.95;
+      unfocused_opacity = 0.95;
 
       animations = 1;
       layer_animations = 1;
@@ -144,7 +145,7 @@
       circle_layout = "tile,scroller,grid,dwindle";
 
       tagrule = [
-        "id:1,layout_name:tile"
+        "id:1,layout_name:grid"
         "id:2,layout_name:scroller"
         "id:3,layout_name:tile"
         "id:4,layout_name:tile"
@@ -159,29 +160,24 @@
         "tags:2,monitor:eDP-1,appid:zen-twilight"
         "tags:1,monitor:eDP-1,appid:vesktop"
         "tags:1,monitor:eDP-1,title:Spotify"
-        "focused_opacity:0.95,unfocused_opacity:0.95,appid:thunar"
+        "focused_opacity:0.88,unfocused_opacity:0.88,appid:thunar"
+        "focused_opacity:1,unfocused_opacity:1,appid:REAPER"
       ];
 
       bind = [
 
         "SUPER,r,reload_config"
         "SUPER+SHIFT,E,quit"
-        "CTRL+ALT,Delete,quit"
         "SUPER,Q,killclient"
 
         "SUPER,Return,spawn,kitty"
+        "SUPER,T,spawn,thunar"
         "SUPER,D,spawn_shell,vicinae toggle"
-        "SUPER,s,spawn_shell,dms settings"
 
         "SUPER,F,togglemaximizescreen"
         "SUPER+SHIFT,F,togglefullscreen"
         "SUPER,V,togglefloating"
         "SUPER,O,toggleoverview"
-        "SUPER,C,centerwin"
-        "SUPER,W,switch_layout"
-        "SUPER,g,toggleglobal"
-        "SUPER+SHIFT,I,restore_minimized"
-        "ALT,z,toggle_scratchpad"
 
         "SUPER,BracketLeft,scroller_stack,left"
         "SUPER,BracketRight,scroller_stack,right"
@@ -228,15 +224,6 @@
         "SUPER+SHIFT,Up,focusmon,up"
         "SUPER+SHIFT,Right,focusmon,right"
 
-        "SUPER+SHIFT+CTRL,H,tagmon,left"
-        "SUPER+SHIFT+CTRL,J,tagmon,down"
-        "SUPER+SHIFT+CTRL,K,tagmon,up"
-        "SUPER+SHIFT+CTRL,L,tagmon,right"
-        "SUPER+SHIFT+CTRL,Left,tagmon,left"
-        "SUPER+SHIFT+CTRL,Down,tagmon,down"
-        "SUPER+SHIFT+CTRL,Up,tagmon,up"
-        "SUPER+SHIFT+CTRL,Right,tagmon,right"
-
         "SUPER,U,viewtoleft,0"
         "SUPER,I,viewtoright,0"
         "SUPER+CTRL,U,tagtoleft,0"
@@ -271,14 +258,11 @@
         "ALT+SHIFT,X,incgaps,1"
         "ALT+SHIFT,Z,incgaps,-1"
 
-        "SUPER+SHIFT,P,spawn_shell,wlr-dpms off"
-
-        "SHIFT,Print,spawn,$HOME/.config/mango/scripts/screenshot/screenshot.sh region"
+        "NONE,Print,spawn,$HOME/.config/mango/scripts/screenshot/screenshot.sh region"
         "SUPER,Print,spawn,$HOME/.config/mango/scripts/screenshot/screenshot.sh annotate"
       ];
 
       bindl = [
-        "SUPER+ALT,S,spawn_shell,pkill orca || exec orca"
 
         "NONE,XF86AudioRaiseVolume,spawn_shell,wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"
         "NONE,XF86AudioLowerVolume,spawn_shell,wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"
@@ -312,7 +296,7 @@
       vesktop &
       /etc/profiles/per-user/gachilich/bin/vicinae server &
       awww-daemon &
-      noctalia-shell &
+      noctalia &
     '';
   };
 

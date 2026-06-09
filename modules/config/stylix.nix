@@ -19,6 +19,7 @@
     size = 40;
   };
 
+  stylix.targets.kmscon.enable = false;
   stylix.fonts = {
     serif = {
       package = pkgs.maple-mono.NF;
@@ -41,7 +42,7 @@
   specialisation.dark.configuration = {
     stylix = {
       polarity = pkgs.lib.mkForce "dark";
-      image = lib.mkForce ../../nixpics/Wallpapers/lain.png;
+      image = lib.mkForce ../../nixpics/Wallpapers/nix-gray.png;
       base16Scheme = pkgs.lib.mkForce "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
     };
   };
