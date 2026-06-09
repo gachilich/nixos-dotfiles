@@ -69,51 +69,9 @@ in
         }
       '';
 
-      # --- userContent: прозрачный фон страниц, но не для медиа ---
-      userContent = ''
-        @-moz-document url-prefix("") {
-          /* Прозрачный фон страниц */
-          html, body {
-            background-color: transparent !important;
-            background-image: none !important;
-          }
-
-          /* Изображения — без изменений */
-          img, picture, canvas, svg {
-            opacity: 1 !important;
-            background-color: initial !important;
-          }
-
-          /* Видео и встроенные объекты — без изменений */
-          video, audio, iframe, embed, object {
-            opacity: 1 !important;
-            background-color: initial !important;
-          }
-
-          /* Блоки с background-image в inline-стиле — сохранить фон */
-          [style*="background-image"] {
-            background-color: initial !important;
-          }
-        }
-      '';
-
       search = {
         force = true;
         default = "Brave";
-        engines = {
-          "Brave" = {
-            name = "Brave Search";
-            urls = [{
-              template = "https://search.brave.com/search";
-              params = [
-                { name = "q"; value = "{searchTerms}"; }
-              ];
-            }];
-            icon = "https://cdn.search.brave.com/serp/v2/_app/immutable/assets/brave-search-icon.CsIBfqGk.svg";
-            updateInterval = 24 * 60 * 60 * 1000;
-            definedAliases = [ "@brave" ];
-          };
-        };
       };
     };
   };
