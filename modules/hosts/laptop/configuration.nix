@@ -100,7 +100,10 @@
     ffmpeg
     efibootmgr
     jq
+    brightnessctl
   ];
+
+  services.upower.enable = true;
 
   fonts.packages = with pkgs; [
     noto-fonts

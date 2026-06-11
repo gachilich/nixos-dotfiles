@@ -267,14 +267,9 @@
         "NONE,XF86AudioRaiseVolume,spawn_shell,wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"
         "NONE,XF86AudioLowerVolume,spawn_shell,wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"
         "NONE,XF86AudioMute,spawn_shell,wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        "NONE,XF86AudioMicMute,spawn_shell,wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-        "NONE,XF86AudioPlay,spawn_shell,playerctl play-pause"
-        "NONE,XF86AudioNext,spawn_shell,playerctl next"
-        "NONE,XF86AudioPrev,spawn_shell,playerctl previous"
-        "NONE,XF86AudioStop,spawn_shell,playerctl stop"
 
-        "NONE,XF86MonBrightnessUp,spawn_shell,brightnessctl --class=backlight set +10%"
-        "NONE,XF86MonBrightnessDown,spawn_shell,brightnessctl --class=backlight set 10%"
+        "NONE,XF86MonBrightnessUp,spawn_shell,brightnessctl set +10%"
+        "NONE,XF86MonBrightnessDown,spawn_shell,brightnessctl set 10%-"
       ];
 
       mousebind = [

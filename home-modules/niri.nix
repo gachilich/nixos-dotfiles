@@ -5,11 +5,6 @@ in
 {
   programs.niri.settings = {
 
-    cursor = {
-      theme = "BreezeX-RosePine-Linux";
-      size = 30;
-    };
-
     spawn-at-startup = [
       { command = [ "noctalia-shell" ]; }
       { command = [ "zen-twilight" ]; }

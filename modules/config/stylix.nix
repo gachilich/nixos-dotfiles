@@ -16,7 +16,7 @@
   stylix.cursor = {
     name = "BreezeX-RosePine-Linux";
     package = pkgs.rose-pine-cursor;
-    size = 40;
+    size = 28;
   };
 
   stylix.targets.kmscon.enable = false;
