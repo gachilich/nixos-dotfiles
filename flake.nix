@@ -11,8 +11,6 @@
 
     import-tree.url = "github:vic/import-tree";
 
-    niri.url = "github:sodiboo/niri-flake";
-
     mangowm.url = "github:mangowm/mango";
 
     noctalia.url = "github:noctalia-dev/noctalia-shell";

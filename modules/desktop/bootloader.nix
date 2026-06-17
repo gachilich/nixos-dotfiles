@@ -10,15 +10,6 @@
     efiSupport = true;
     useOSProber = true;
     efiInstallAsRemovable = false;
-    extraEntries = ''
-      menuentry "Windows 11" {
-        insmod part_gpt
-        insmod fat
-        insmod chain
-        search --no-floppy --fs-uuid --set=root 990E-5D36
-        chainloader /EFI/Microsoft/Boot/bootmgfw.efi
-      }
-    '';
 
     theme = pkgs.fetchFromGitHub {
       owner = "uiriansan";

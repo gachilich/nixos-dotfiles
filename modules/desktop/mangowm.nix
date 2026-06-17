@@ -22,7 +22,7 @@
       pkgs.xdg-desktop-portal-gtk
     ];
     config = {
-      mango = {  # <-- вместо common; точное значение XDG_CURRENT_DESKTOP
+      mango = {
         default = lib.mkForce [ "wlr" "gtk" ];
         "org.freedesktop.impl.portal.ScreenCast" = [ "wlr" ];
         "org.freedesktop.impl.portal.Screenshot" = [ "wlr" ];

@@ -5,6 +5,7 @@
   environment.systemPackages = with pkgs; [
     wl-clipboard
     timg
+    winetricks
     qimgv
     awww
     mpv

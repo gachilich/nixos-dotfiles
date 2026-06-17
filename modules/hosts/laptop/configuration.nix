@@ -6,8 +6,6 @@
     ./hardware-configuration.nix
   ];
 
-  boot.loader.grub.mirroredBoots = [];
-
   boot.kernel.sysctl = {
     "net.core.default_qdisc" = "fq";
     "net.ipv4.tcp_congestion_control" = "bbr";
@@ -22,7 +20,7 @@
   };
 
   fileSystems."/mnt/windows" = {
-    device = "/dev/disk/by-uuid/282CEB042CEACC3E";
+    device = "/dev/disk/by-uuid/86A66895A668878F";
     fsType = "ntfs3";
     options = [ "rw" "uid=1000" "nofail" ]; # Replace 1000 with your UID
   };
@@ -91,15 +89,10 @@
 
   environment.systemPackages = with pkgs; [
     wget
-    gcc
     fd
-    eza
     duf
-    winetricks
-    openssl
     ffmpeg
     efibootmgr
-    jq
     brightnessctl
   ];
 
