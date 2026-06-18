@@ -2,7 +2,7 @@
 let
   system = pkgs.stdenv.hostPlatform.system;
 
-  nvix-themed = inputs.nvix.packages.${system}.default.extend (
+  nvix = inputs.nvix.packages.${system}.default.extend (
     { lib, ... }:
     {
       imports = [ config.stylix.targets.nixvim.exportedModule ];
@@ -18,7 +18,7 @@ let
 in
 {
   environment.systemPackages = [
-    nvix-themed
+    nvix
     pkgs.lazygit
     pkgs.tree-sitter
   ];
