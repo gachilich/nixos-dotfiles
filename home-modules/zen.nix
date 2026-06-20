@@ -46,6 +46,7 @@ in
         "570afd9d-96fa-48b5-bad3-0c106757cce9" # Super Sleek UI
         "642854b5-88b4-4c40-b256-e035532109df" # Transparent Zen
         "81fcd6b3-f014-4796-988f-6c3cb3874db8" # Zen Context Menu
+        "c6813222-6571-4ba6-8faf-58f3343324f6" #Disable Rounded Corners
       ];
 
       # --- Флаги about:config для прозрачности ---

@@ -7,6 +7,8 @@ let
     {
       imports = [ config.stylix.targets.nixvim.exportedModule ];
       plugins.render-markdown.settings.latex.enabled = false;
+      plugins.chatgpt.enable = lib.mkForce false;
+      plugins.copilot-lua.enable = lib.mkForce false;
       plugins.obsidian.settings.workspaces = [
         {
           name = "araOBSIDIAN";

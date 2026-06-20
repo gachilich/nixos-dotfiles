@@ -4,12 +4,10 @@
 
   environment.systemPackages = with pkgs; [
     wl-clipboard
-    timg
     winetricks
     qimgv
     awww
     mpv
-    strawberry
     mpvpaper
     libsForQt5.qt5ct
     superfile

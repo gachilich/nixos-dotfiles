@@ -32,4 +32,5 @@
   environment.sessionVariables = {
     WLR_DRM_NO_ATOMIC = "1";
   };
+  services.xserver.excludePackages = [ pkgs.xterm];
 }

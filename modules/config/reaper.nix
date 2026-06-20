@@ -1,25 +1,36 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
+let
+  reaperLibs = lib.makeLibraryPath (with pkgs; [
+    freetype
+    libpng
+    zlib
+    fontconfig.lib
+    libepoxy
+    gtk3
+    cairo
+    glib.out
+    stdenv.cc.cc.lib
+    systemd
+    xdotool
+    libX11
+  ]);
+
+  reaper-wrapped = pkgs.symlinkJoin {
+    name = "reaper-wrapped";
+    paths = [ pkgs.reaper ];
+    nativeBuildInputs = [ pkgs.makeWrapper ];
+    postBuild = ''
+      wrapProgram $out/bin/reaper \
+        --prefix LD_LIBRARY_PATH : "${reaperLibs}"
+    '';
+  };
+in
 {
   environment.systemPackages = with pkgs; [
-    reaper
+    reaper-wrapped
     yabridge
     yabridgectl
-    pkgs.vital
+    vital
     wineWow64Packages.yabridge
-  ];
-
-  environment.sessionVariables.LD_LIBRARY_PATH = [
-    "${pkgs.freetype}/lib"
-    "${pkgs.libpng}/lib"
-    "${pkgs.zlib}/lib"
-    "${pkgs.fontconfig.lib}/lib"
-    "${pkgs.libepoxy}/lib"
-    "${pkgs.gtk3}/lib"
-    "${pkgs.cairo}/lib"
-    "${pkgs.glib.out}/lib"
-    "${pkgs.stdenv.cc.cc.lib}/lib"
-    "${pkgs.systemd}/lib"        # исправлено
-    "${pkgs.xdotool}/lib"
-    "${pkgs.libX11}/lib"
   ];
 }
