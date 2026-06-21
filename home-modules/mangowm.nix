@@ -162,6 +162,7 @@
         "tags:1,monitor:eDP-1,title:Spotify"
         "focused_opacity:0.88,unfocused_opacity:0.88,appid:thunar"
         "focused_opacity:1,unfocused_opacity:1,appid:REAPER"
+        "focused_opacity:1,unfocused_opacity:1,appid:Spotify"
       ];
 
       bind = [

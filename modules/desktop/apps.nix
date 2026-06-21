@@ -23,4 +23,5 @@
     telegram-desktop
     btop
   ];
+  # virtualisation.virtualbox.host.enable =true;
 }

@@ -81,7 +81,7 @@
   users.users.gachilich = {
     isNormalUser = true;
     shell = pkgs.fish;
-    extraGroups = [ "wheel" "audio" "input" "sound" "video" "realtime" "i2c" "docker" "scanner" "lp" ];
+    extraGroups = [ "wheel" "audio" "input" "sound" "video" "realtime" "i2c" "vboxusers" "scanner" "lp" ];
     packages = with pkgs; [ tree ];
   };
 

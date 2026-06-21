@@ -27,9 +27,11 @@
 
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
 
-    nvix.url = "github:niksingh710/nvix"; 
+    nvix.url = "github:niksingh710/nvix";
 
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
+
+    musnix.url = "github:musnix/musnix";
 
     stylix.url = "github:nix-community/stylix";
 
