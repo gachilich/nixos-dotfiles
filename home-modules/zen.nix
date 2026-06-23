@@ -69,10 +69,23 @@ in
           background: transparent !important;
         }
       '';
-
       search = {
         force = true;
-        default = "Brave";
+        default = "SearXNG";
+        engines = {
+          "SearXNG" = {
+            urls = [
+              {
+                template = "http://127.0.0.1:8888/search";
+                params = [
+                  { name = "q"; value = "{searchTerms}"; }
+                ];
+              }
+            ];
+            icon = "http://127.0.0.1:8888/favicon.ico";
+            definedAliases = [ "@sx" ];
+          };
+        };
       };
     };
   };

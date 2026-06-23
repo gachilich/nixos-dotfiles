@@ -81,7 +81,7 @@
   users.users.gachilich = {
     isNormalUser = true;
     shell = pkgs.fish;
-    extraGroups = [ "wheel" "audio" "input" "sound" "video" "realtime" "i2c" "vboxusers" "scanner" "lp" ];
+    extraGroups = [ "wheel" "audio" "input" "sound" "video" "realtime" "i2c" "scanner" "lp" "kvm" "libvirtd"];
     packages = with pkgs; [ tree ];
   };
 
@@ -104,6 +104,10 @@
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  boot.kernelModules = [ "kvm-intel" "kvm" ];
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
 
   system.stateVersion = "25.11";
 }

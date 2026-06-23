@@ -47,7 +47,7 @@ xdg.dataFile."icons/Gruvbox-Plus-Light/index.theme".text =
           icon_theme = "Gruvbox-Plus-Dark";
       };
         launcher_window = {
-          opacity = 0.9;
+          opacity = 1;
       };
       };
     };

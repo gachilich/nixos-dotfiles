@@ -56,8 +56,8 @@
       border_radius = 7;
       no_radius_when_single = 0;
 
-      focused_opacity = 0.95;
-      unfocused_opacity = 0.95;
+      focused_opacity = 1;
+      unfocused_opacity = 1;
 
       animations = 1;
       layer_animations = 1;
@@ -147,13 +147,13 @@
       tagrule = [
         "id:1,layout_name:grid"
         "id:2,layout_name:scroller"
-        "id:3,layout_name:tile"
-        "id:4,layout_name:tile"
-        "id:5,layout_name:tile"
-        "id:6,layout_name:tile"
-        "id:7,layout_name:tile"
-        "id:8,layout_name:tile"
-        "id:9,layout_name:tile"
+        "id:3,layout_name:scroller"
+        "id:4,layout_name:scroller"
+        "id:5,layout_name:scroller"
+        "id:6,layout_name:scroller"
+        "id:7,layout_name:scroller"
+        "id:8,layout_name:scroller"
+        "id:9,layout_name:scroller"
       ];
 
       windowrule = [
@@ -161,8 +161,6 @@
         "tags:1,monitor:eDP-1,appid:vesktop"
         "tags:1,monitor:eDP-1,title:Spotify"
         "focused_opacity:0.88,unfocused_opacity:0.88,appid:thunar"
-        "focused_opacity:1,unfocused_opacity:1,appid:REAPER"
-        "focused_opacity:1,unfocused_opacity:1,appid:Spotify"
       ];
 
       bind = [
