@@ -32,7 +32,6 @@
       search = {
         safe_search = 0;
         autocomplete = "duckduckgo";
-        default_lang = "ru-RU";
         formats = [ "html" "json" ];
       };
     };
