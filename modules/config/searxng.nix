@@ -35,8 +35,7 @@
         formats = [ "html" "json" ];
       };
     };
-    # secret_key — секрет, не должен попасть в Nix store.
-    # Берём его из файла с переменными окружения.
+
     environmentFile = "/var/lib/searx/searx-secret";
   };
 }

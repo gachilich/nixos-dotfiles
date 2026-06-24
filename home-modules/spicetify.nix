@@ -1,6 +1,15 @@
 { pkgs, inputs, config, ... }:
 let
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+
+  progressBarCss = ''
+    .progress-bar,
+    [data-testid="progress-bar"] {
+      --fg-color: #${config.lib.stylix.colors.base0A} !important;
+      --mg-color: #${config.lib.stylix.colors.base0A} !important;
+      --bg-color: #${config.lib.stylix.colors.base02} !important;
+    }
+  '';
 in
 {
   imports = [
@@ -10,7 +19,10 @@ in
   programs.spicetify = {
     enable = true;
 
-    theme = spicePkgs.themes.text;
+    theme = spicePkgs.themes.text // {
+      additionalCss = (spicePkgs.themes.text.additionalCss or "") + progressBarCss;
+    };
+
     colorScheme = "custom";
     customColorScheme = {
       text         =       "${config.lib.stylix.colors.base05}";
@@ -35,7 +47,6 @@ in
       adblock
       shuffle
       keyboardShortcut
-      playlistIcons #
       fullAlbumDate
       listPlaylistsWithSong
       history

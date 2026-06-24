@@ -5,25 +5,22 @@
   ];
 
   xdg.dataFile."icons/Gruvbox-Plus-Dark/index.theme".text =
-  builtins.replaceStrings
+    builtins.replaceStrings
     [ "Name=Gruvbox Plus Dark" "Inherits=breeze-dark, hicolor" ]
     [ "Name=Gruvbox-Plus-Dark" "Inherits=Papirus-Dark,hicolor" ]
     (builtins.readFile "${pkgs.gruvbox-plus-icons}/share/icons/Gruvbox-Plus-Dark/index.theme");
 
-xdg.dataFile."icons/Gruvbox-Plus-Light/index.theme".text =
-  builtins.replaceStrings
+  xdg.dataFile."icons/Gruvbox-Plus-Light/index.theme".text =
+    builtins.replaceStrings
     [ "Name=Gruvbox Plus Light" "Inherits=breeze-dark, hicolor" ]
     [ "Name=Gruvbox-Plus-Light" "Inherits=Papirus,hicolor" ]
     (builtins.readFile "${pkgs.gruvbox-plus-icons}/share/icons/Gruvbox-Plus-Light/index.theme");
 
-  services.vicinae = {
+  programs.vicinae = {
     enable = true;
     systemd = {
       enable = true;
       autoStart = true; # default: false
-      environment = {
-        USE_LAYER_SHELL = 1;
-      };
     };
     settings = {
       close_on_focus_loss = true;
@@ -37,7 +34,7 @@ xdg.dataFile."icons/Gruvbox-Plus-Light/index.theme".text =
           family = "MapleMono-NF";
         };
       };
-      theme = {
+      themes = {
         light = {
           name = "stylix";
           icon_theme = "Gruvbox-Plus-Light";

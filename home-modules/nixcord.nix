@@ -9,21 +9,33 @@
 
     quickCss = ''
       :root {
-        --bg-4: #ffefd8;
-        --bg-3: #eae1c8;
-        --bg-2: #d8cdb8;
-        --bg-1: #c9b99a;
-        --hover:    color-mix(in srgb, #7c6f64 10%, transparent);
-        --active:   color-mix(in srgb, #7c6f64 20%, transparent);
-        --active-2: color-mix(in srgb, #7c6f64 30%, transparent);
-        --text-0: #f2efde;
-        --text-1: #2a1f1d;
-        --text-2: #3c3836;
-        --text-3: #4f3829;
-        --text-4: #7c6f64;
-        --text-5: #bfb695;
-        --border-light: color-mix(in srgb, #7c6f64 10%, transparent);
-        --border:       color-mix(in srgb, #7c6f64 20%, transparent);
+        --colors: on;
+        --text-0: #1d2021;
+        --text-1: #f2efde;
+        --text-2: #ebdbb2;
+        --text-3: #d5c4a1;
+        --text-4: #bdae93;
+        --text-5: #928374;
+        --bg-1: #3c3836;
+        --bg-2: #32302f;
+        --bg-3: #282828;
+        --bg-4: #1d2021;
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root {
+          --text-0: #f9f5d7;
+          --text-1: #282828;
+          --text-2: #3c3836;
+          --text-3: #504945;
+          --text-4: #665c54;
+          --text-5: #928374;
+
+          --bg-1: #ebdbb2;
+          --bg-2: #f2e5bc;
+          --bg-3: #f9f5d7;
+          --bg-4: #fbf1c7;
+        }
       }
     '';
     config = {
