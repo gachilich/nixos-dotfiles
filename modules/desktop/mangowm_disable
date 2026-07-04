@@ -23,7 +23,7 @@
     ];
     config = {
       mango = {
-        default = lib.mkForce [ "wlr" "gtk" ];
+        default = [ "wlr" "gtk" ];
         "org.freedesktop.impl.portal.ScreenCast" = [ "wlr" ];
         "org.freedesktop.impl.portal.Screenshot" = [ "wlr" ];
       };

@@ -10,10 +10,8 @@
     mpv
     mpvpaper
     libsForQt5.qt5ct
-    superfile
     thunar
     rose-pine-cursor
-    zoxide
     obsidian
     mako
     kdePackages.ark
@@ -23,5 +21,4 @@
     telegram-desktop
     btop
   ];
-  # virtualisation.virtualbox.host.enable =true;
 }

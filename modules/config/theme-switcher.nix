@@ -28,12 +28,13 @@ let
 
       light)
         echo "→ Активирую светлую тему..."
-        # switch-to-configuration test применяет конфиг + запускает HM
+
         sudo "$SYSTEM_BASE/bin/switch-to-configuration" test
 
         echo "→ Устанавливаю светлые обои..."
         sleep 1
         awww img "${wallpaperLight}" --transition-type wipe --transition-duration 3
+        awww img "${wallpaperLight}" --namespace backdrop --transition-type wipe --transition-duration 3
 
         echo "→ Перезапускаю приложения..."
         ${restartCmds}
@@ -44,17 +45,13 @@ let
         echo "→ Активирую тёмную тему..."
 
         DARK_STC="$SYSTEM_BASE/specialisation/dark/bin/switch-to-configuration"
-        if [ ! -x "$DARK_STC" ]; then
-          echo "Ошибка: специализация 'dark' не найдена." >&2
-          echo "Запусти: sudo nixos-rebuild switch --flake ~/nixos-dotfiles#gachinix" >&2
-          exit 1
-        fi
 
         sudo "$DARK_STC" test
 
         echo "→ Устанавливаю тёмные обои..."
         sleep 1
         awww img "${wallpaperDark}" --transition-type wipe --transition-duration 3
+        awww img "${wallpaperDark}" --namespace backdrop --transition-type wipe --transition-duration 3
 
         echo "→ Перезапускаю приложения..."
         ${restartCmds}

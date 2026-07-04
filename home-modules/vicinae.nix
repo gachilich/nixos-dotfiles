@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, lib, ... }:
 {
   imports = [
     inputs.vicinae.homeManagerModules.default
@@ -34,25 +34,24 @@
           family = "MapleMono-NF";
         };
       };
+      launcher_window.opacity = lib.mkForce 1.0;
+
       themes = {
         light = {
           name = "stylix";
           icon_theme = "Gruvbox-Plus-Light";
-      };
-      dark = {
+        };
+        dark = {
           name = "stylix";
           icon_theme = "Gruvbox-Plus-Dark";
-      };
-        launcher_window = {
-          opacity = 1;
-      };
+        };
       };
     };
     extensions = with inputs.vicinae-extensions.packages.${pkgs.stdenv.hostPlatform.system}; [
-      bluetooth
       nix
       power-profile
       awww-switcher
+      protondb-search
     ];
   };
 }

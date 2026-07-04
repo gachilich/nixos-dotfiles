@@ -19,13 +19,6 @@
     options = [ "defaults" "nofail" ];
   };
 
-  fileSystems."/mnt/windows" = {
-    device = "/dev/disk/by-uuid/86A66895A668878F";
-    fsType = "ntfs3";
-    options = [ "rw" "uid=1000" "nofail" ]; # Replace 1000 with your UID
-  };
-
-
   zramSwap = {
     enable = true;
     algorithm = "zstd";
@@ -95,6 +88,8 @@
     ffmpeg
     efibootmgr
     brightnessctl
+    unzip
+    jq
   ];
 
   services.upower.enable = true;
