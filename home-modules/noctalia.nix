@@ -5,8 +5,13 @@
   ];
 
   programs.noctalia = {
+    systemd.enable = true;
     enable = true;
-  #  settings = {
+    settings = {
+      theme = {
+        source = "custom";
+        custom_palette = "stylix";
+      };
   #    ui = {
   #      fontDefault = "Maple Mono NF";
   #      fontFixed = "Maple Mono NF";
@@ -210,7 +215,7 @@
   #      };
   #      version = 2;
   #    };
-  #  };
+    };
   };
 
   stylix.targets.noctalia-shell.enable = true;

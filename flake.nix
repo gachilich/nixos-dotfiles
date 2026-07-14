@@ -39,6 +39,7 @@
 
     vicinae-extensions.url = "github:vicinaehq/extensions";
 
+    niri.url   = "github:sodiboo/niri-flake";
   };
 
   outputs = inputs@{ flake-parts, ... }:

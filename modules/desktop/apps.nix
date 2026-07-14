@@ -21,4 +21,9 @@
     telegram-desktop
     btop
   ];
+  programs.localsend = {
+    enable = true;
+    openFirewall = true;
+  };
+  services.lact.enable = true;
 }

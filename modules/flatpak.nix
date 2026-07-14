@@ -11,7 +11,6 @@
       { appId = "org.libreoffice.LibreOffice"; origin = "flathub"; }
       { appId = "ru.linux_gaming.PortProton"; origin = "flathub"; }
       { appId = "org.gnome.SimpleScan"; origin = "flathub"; }
-      { appId = "org.localsend.localsend_app"; origin = "flathub"; }
       { appId = "com.github.tchx84.Flatseal"; origin = "flathub"; }
     ];
   };
