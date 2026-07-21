@@ -1,5 +1,10 @@
 { pkgs, lib, ... }:
 let
+  libxdoCompat = pkgs.runCommand "libxdo-compat" {} ''
+    mkdir -p $out/lib
+    ln -s ${pkgs.xdotool}/lib/libxdo.so.4 $out/lib/libxdo.so.3
+  '';
+
   reaperLibs = lib.makeLibraryPath (with pkgs; [
     freetype
     libpng
@@ -9,12 +14,13 @@ let
     gtk3
     cairo
     glib.out
-    stdenv.cc.cc.lib
+    libgcc.lib
     systemd
+    udev
     xdotool
     libX11
+    libxdoCompat
   ]);
-
   reaper-wrapped = pkgs.symlinkJoin {
     name = "reaper-wrapped";
     paths = [ pkgs.reaper ];

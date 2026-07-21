@@ -13,6 +13,8 @@
 
     mangowm.url = "github:mangowm/mango";
 
+    niri.url   = "github:sodiboo/niri-flake";
+
     noctalia.url = "github:noctalia-dev/noctalia-shell";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
@@ -39,7 +41,9 @@
 
     vicinae-extensions.url = "github:vicinaehq/extensions";
 
-    niri.url   = "github:sodiboo/niri-flake";
+    areofyl-fetch.url = "github:areofyl/fetch";
+
+    linux-wallpaper-engine.url = "github:jagrat7/linux-wallpaper-engine";
   };
 
   outputs = inputs@{ flake-parts, ... }:

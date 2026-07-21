@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   services.gvfs.enable = true;
 
@@ -11,16 +11,20 @@
     mpvpaper
     libsForQt5.qt5ct
     thunar
+    xfconf
     rose-pine-cursor
     obsidian
-    mako
     kdePackages.ark
     unrar
     gparted
     qbittorrent-enhanced
     telegram-desktop
     btop
+    mpc
+    strawberry
+    inputs.linux-wallpaper-engine.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
+
   programs.localsend = {
     enable = true;
     openFirewall = true;

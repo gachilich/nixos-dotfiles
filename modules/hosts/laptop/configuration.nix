@@ -90,6 +90,7 @@
     brightnessctl
     unzip
     jq
+    nix-index
   ];
 
   services.upower.enable = true;

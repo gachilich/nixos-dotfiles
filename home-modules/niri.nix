@@ -49,7 +49,7 @@
           }
           focus-ring { off; }
           border {
-              width 1.500000
+              width 2
               active-color "#45707a"
               inactive-color "#a89984"
           }
@@ -73,8 +73,8 @@
       blur {
           passes 2
           offset 2
-          noise 0.05
-          saturation 1.3
+          noise 0.08
+          saturation 1.4
       }
 
       cursor {

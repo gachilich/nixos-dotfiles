@@ -20,4 +20,5 @@
 
   stylix.targets.gtk.enable = true;
   stylix.targets.gtk.colors.enable = true;
+  stylix.targets.mako.enable = true;
 }
