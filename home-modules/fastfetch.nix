@@ -69,7 +69,7 @@
         {
           type = "colors";
           paddingLeft = 2;
-          symbol = "circle";
+          symbol = "block";
         }
       ];
     };

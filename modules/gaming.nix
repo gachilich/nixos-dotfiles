@@ -13,7 +13,6 @@
   environment.systemPackages = with pkgs; [
     mangohud
     prismlauncher
-    protonup-qt
     antimicrox
   ];
 

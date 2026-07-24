@@ -22,7 +22,9 @@
     btop
     mpc
     strawberry
-    inputs.linux-wallpaper-engine.packages.${pkgs.stdenv.hostPlatform.system}.default
+    aria2
+    yt-dlp
+    inputs.helium.packages.${stdenv.hostPlatform.system}.default
   ];
 
   programs.localsend = {

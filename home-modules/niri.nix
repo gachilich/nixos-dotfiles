@@ -1,7 +1,6 @@
-{ config, lib, ... }:
+{ ... }:
 {
-
-  programs.niri = {
+programs.niri = {
     config = ''
       input {
           keyboard {
@@ -71,9 +70,9 @@
       }
 
       blur {
-          passes 2
-          offset 2
-          noise 0.08
+          passes 3
+          offset 4
+          noise 0.05
           saturation 1.4
       }
 
@@ -226,9 +225,9 @@
       }
       window-rule {
           match app-id="^kitty$"
-
           background-effect {
               blur true
+              xray true
           }
       }
 
@@ -236,8 +235,8 @@
       window-rule { geometry-corner-radius 4.000000 4.000000 4.000000 4.000000; }
 
       layer-rule {
-          match namespace="^awww-daemonbackdrop$"
-          place-within-backdrop true
+        match namespace="^awww-daemonbackdrop$"
+        place-within-backdrop true
       }
 
       animations {

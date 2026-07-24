@@ -9,6 +9,47 @@ let
       --mg-color: #${config.lib.stylix.colors.base0A} !important;
       --bg-color: #${config.lib.stylix.colors.base02} !important;
     }
+
+    button[aria-label="Play"] svg,
+    button[data-testid="play-button"] svg,
+    .main-playButton-PlayButton svg,
+    .player-controls__buttons svg {
+      fill: #${config.lib.stylix.colors.base0D} !important;
+      color: #${config.lib.stylix.colors.base0D} !important;
+    }
+
+    button[aria-label="Play"] svg path,
+    button[data-testid="play-button"] svg path {
+      fill: #${config.lib.stylix.colors.base0D} !important;
+    }
+
+    button[aria-label="Play"]:hover svg,
+    button[data-testid="play-button"]:hover svg {
+      fill: #${config.lib.stylix.colors.base09} !important;
+    }
+  '';
+  lyricsCss = ''
+    .lyrics-lyricsContent-lyric,
+    .lyrics-lyricsContent-line,
+    .main-lyricsLyricsContainer-lyric,
+    .main-lyricsLyricsContainer-line {
+      color: #${config.lib.stylix.colors.base04} !important;
+    }
+
+    .lyrics-lyricsContent-lyric:hover,
+    .lyrics-lyricsContent-line:hover,
+    .main-lyricsLyricsContainer-lyric:hover,
+    .main-lyricsLyricsContainer-line:hover {
+      color: #${config.lib.stylix.colors.base05} !important;
+    }
+
+    .lyrics-lyricsContent-active,
+    .lyrics-lyricsContent-lyric[aria-current="true"],
+    .main-lyricsLyricsContainer-active,
+    .main-lyricsLyricsContainer-lyric[aria-current="true"] {
+      color: #${config.lib.stylix.colors.base00} !important;
+      background: #${config.lib.stylix.colors.base0A} !important;
+    }
   '';
 in
 {
@@ -20,7 +61,10 @@ in
     enable = true;
 
     theme = spicePkgs.themes.text // {
-      additionalCss = (spicePkgs.themes.text.additionalCss or "") + progressBarCss;
+      additionalCss =
+        (spicePkgs.themes.text.additionalCss or "")
+        + progressBarCss
+        + lyricsCss;
     };
 
     colorScheme = "custom";

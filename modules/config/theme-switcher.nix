@@ -2,7 +2,9 @@
 
 let
   wallpaperLight = "/home/gachilich/nixos-dotfiles/nixpics/Wallpapers/artur.png";
-  wallpaperDark  = "/home/gachilich/nixos-dotfiles/nixpics/Wallpapers/nix-gray.png";
+  wallpaperLightBlur = "/home/gachilich/nixos-dotfiles/nixpics/Wallpapers/berseks_blur.png";
+  wallpaperDark  = "/home/gachilich/nixos-dotfiles/nixpics/Wallpapers/tux.png";
+  wallpaperDarkBlur  = "/home/gachilich/nixos-dotfiles/nixpics/Wallpapers/gruvcity_blur.png";
 
   appsToRestart = [
     { pname = "kitty";   bin = "/etc/profiles/per-user/gachilich/bin/kitty"; }
@@ -34,7 +36,7 @@ let
         echo "→ Устанавливаю светлые обои..."
         sleep 1
         awww img "${wallpaperLight}" --transition-type wipe --transition-duration 3
-        awww img "${wallpaperLight}" --namespace backdrop --transition-type wipe --transition-duration 3
+        awww img "${wallpaperLightBlur}" --namespace backdrop --transition-type wipe --transition-duration 3
 
         echo "→ Перезапускаю приложения..."
         ${restartCmds}
@@ -51,7 +53,7 @@ let
         echo "→ Устанавливаю тёмные обои..."
         sleep 1
         awww img "${wallpaperDark}" --transition-type wipe --transition-duration 3
-        awww img "${wallpaperDark}" --namespace backdrop --transition-type wipe --transition-duration 3
+        awww img "${wallpaperDarkBlur}" --namespace backdrop --transition-type wipe --transition-duration 3
 
         echo "→ Перезапускаю приложения..."
         ${restartCmds}

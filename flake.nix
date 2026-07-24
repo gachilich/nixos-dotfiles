@@ -43,7 +43,8 @@
 
     areofyl-fetch.url = "github:areofyl/fetch";
 
-    linux-wallpaper-engine.url = "github:jagrat7/linux-wallpaper-engine";
+    helium.url = "github:AlvaroParker/helium-nix";
+
   };
 
   outputs = inputs@{ flake-parts, ... }:

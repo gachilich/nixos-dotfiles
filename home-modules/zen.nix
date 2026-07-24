@@ -49,26 +49,6 @@ in
         "c6813222-6571-4ba6-8faf-58f3343324f6" #Disable Rounded Corners
       ];
 
-      # --- Флаги about:config для прозрачности ---
-      settings = {
-        # Прозрачность интерфейса браузера (тулбар, сайдбар)
-        "zen.widget.linux.transparency" = true;
-        # Прозрачность контента страниц
-        "browser.tabs.allow_transparent_browser" = true;
-        # Отключить серый фон неактивных окон
-        "zen.view.grey-out-inactive-windows" = false;
-        # Разрешить кастомные цвета темы (для полупрозрачного тинта)
-        "zen.theme.gradient.show-custom-colors" = false;
-      };
-
-      # --- userChrome: прозрачность интерфейса браузера ---
-      userChrome = ''
-        #browser,
-        #tabbrowser-tabpanels,
-        .browserContainer {
-          background: transparent !important;
-        }
-      '';
       search = {
         force = true;
         default = "SearXNG";

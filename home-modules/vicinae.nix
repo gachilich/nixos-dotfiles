@@ -52,6 +52,7 @@
       power-profile
       awww-switcher
       protondb-search
+      aria2-manager
     ];
   };
 }
