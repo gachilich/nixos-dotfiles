@@ -51,6 +51,37 @@ let
       background: #${config.lib.stylix.colors.base0A} !important;
     }
   '';
+  searchCss = ''
+    .x-searchInput-searchInput,
+    .main-trackList-trackListHeaderRow input,
+    input[placeholder="Search in playlist"],
+    input[data-testid="playlist-search-input"] {
+      background-color: #${config.lib.stylix.colors.base01} !important;
+      color: #${config.lib.stylix.colors.base05} !important;
+      border: 1px solid #${config.lib.stylix.colors.base03} !important;
+    }
+
+    .x-searchInput-searchInput input,
+    .x-searchInput-searchInput input::placeholder,
+    .main-trackList-trackListHeaderRow input::placeholder,
+    input[placeholder="Search in playlist"]::placeholder,
+    input[data-testid="playlist-search-input"]::placeholder {
+      color: #${config.lib.stylix.colors.base04} !important;
+      opacity: 1 !important;
+    }
+
+    .x-searchInput-searchInput svg,
+    .main-trackList-trackListHeaderRow svg {
+      color: #${config.lib.stylix.colors.base04} !important;
+      fill: #${config.lib.stylix.colors.base04} !important;
+    }
+
+    .x-searchInput-searchInput:focus-within,
+    .main-trackList-trackListHeaderRow input:focus {
+      border-color: #${config.lib.stylix.colors.base0D} !important;
+      box-shadow: 0 0 0 1px #${config.lib.stylix.colors.base0D} !important;
+    }
+  '';
 in
 {
   imports = [
@@ -64,7 +95,8 @@ in
       additionalCss =
         (spicePkgs.themes.text.additionalCss or "")
         + progressBarCss
-        + lyricsCss;
+        + lyricsCss
+        + searchCss;
     };
 
     colorScheme = "custom";

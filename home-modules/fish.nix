@@ -23,9 +23,9 @@
     ];
     shellAliases = {
       nixupdate = "sudo nix flake update";
-      nixrebuid = "sudo nixos-rebuild switch --flake .#gachinix";
-      nixtest = "sudo nixos-rebuild test --flake .#gachinix";
-      nixboot = "sudo nixos-rebuild boot --flake .#gachinix";
+      nixrebuild-switch = "sudo nixos-rebuild switch --flake .#gachinix";
+      nixrebuild-test = "sudo nixos-rebuild test --flake .#gachinix";
+      nixrebuild-boot = "sudo nixos-rebuild boot --flake .#gachinix";
       nixclear = "sudo nix-collect-garbage -d";
       nixgit = "git add -A && git commit -m";
       gpart = "sudo -E WAYLAND_DISPLAY=$WAYLAND_DISPLAY XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR gparted";

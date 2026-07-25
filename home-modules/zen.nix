@@ -38,7 +38,6 @@ in
         "f7c71d9a-bce2-420f-ae44-a64bd92975ab" # Better Unloaded Tabs
         "664c54f9-d97d-410b-a479-23dd8a08a628" # Better Tab Indicators
         "a5f6a231-e3c8-4ce8-8a8e-3e93efd6adec" # Cleaned URL bar
-        "3ff55ba7-4690-4f74-96a8-9e4416685e4e" # Colored container tab
         "b51ff956-6aea-47ab-80c7-d6c047c0d510" # Disable Status Bar
         "4ab93b88-151c-451b-a1b7-a1e0e28fa7f8" # No Sidebar Scrollbar
         "e122b5d9-d385-4bf8-9971-e137809097d0" # No Top Sites
