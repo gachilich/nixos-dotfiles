@@ -10,6 +10,7 @@
       modules =
         (inputs."import-tree" "${inputs.self}/modules").imports
         ++ [
+          inputs.determinate.nixosModules.default
           inputs.home-manager.nixosModules.home-manager
           inputs.nix-flatpak.nixosModules.nix-flatpak
         #  inputs.mangowm.nixosModules.mango

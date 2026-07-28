@@ -91,6 +91,7 @@
     unzip
     jq
     nix-index
+    nh
   ];
 
   services.upower.enable = true;

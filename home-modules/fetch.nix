@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ inputs, ... }:
 
 {
   imports = [ inputs.areofyl-fetch.homeManagerModules.default ];
@@ -19,10 +19,10 @@
       "colors"
     ];
     speed = 0.5;
+    size = 2.0;
+    shading = "█░.M";
     spin = "xy";
     height = 20;
-    shading = "█░.Mm";
-    light = "top-right";
   };
 
 }
