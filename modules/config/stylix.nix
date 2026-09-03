@@ -23,15 +23,15 @@
   stylix.fonts = {
     serif = {
       package = pkgs.maple-mono.NF;
-      name = "MapleMono-NF";
+      name = "Maple Mono NF SemiBold";
     };
     sansSerif = {
       package = pkgs.maple-mono.NF;
-      name = "MapleMono-NF";
+      name = "Maple Mono NF SemiBold";
     };
     monospace = {
       package = pkgs.maple-mono.NF;
-      name = "MapleMono-NF";
+      name = "Maple Mono NF SemiBold";
     };
     emoji = {
       package = pkgs.noto-fonts-color-emoji;

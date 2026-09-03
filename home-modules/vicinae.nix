@@ -31,7 +31,6 @@
       font = {
         normal = {
           size = 12;
-          family = "MapleMono-NF";
         };
       };
       launcher_window.opacity = lib.mkForce 1.0;

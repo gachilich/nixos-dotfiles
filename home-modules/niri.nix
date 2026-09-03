@@ -48,7 +48,7 @@ programs.niri = {
           }
           focus-ring { off; }
           border {
-              width 2
+              width 4 4 4 4
               active-color "#45707a"
               inactive-color "#a89984"
           }
@@ -78,7 +78,7 @@ programs.niri = {
 
       cursor {
           xcursor-theme "BreezeX-RosePine-Linux"
-          xcursor-size 30
+          xcursor-size 32
       }
 
       binds {

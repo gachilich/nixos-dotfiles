@@ -3,11 +3,9 @@
   programs.fish = {
     enable =true;
     interactiveShellInit = ''
-      set fish_greeting # Disable greeting
-      if status is-interactive
-      end
+      set fish_greeting
     '';
-    plugins = [
+      plugins = [
       {
         name = "z";
         src = pkgs.fishPlugins.z.src;
@@ -34,4 +32,4 @@
       awwwback = "awww img --namespace backdrop --transition-type wipe --transition-duration 3";
     };
   };
-}
+ }
