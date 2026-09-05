@@ -30,6 +30,8 @@
       ff = "clear && fastfetch";
       f = "clear && fetch";
       awwwback = "awww img --namespace backdrop --transition-type wipe --transition-duration 3";
+      awwwback-dark = "awww img --namespace backdrop --transition-type wipe --transition-duration 3 /home/gachilich/nixos-dotfiles/nixpics/Wallpapers/gruvcity_blur.png";
+      awwwback-light = "awww img --namespace backdrop --transition-type wipe --transition-duration 3 /home/gachilich/nixos-dotfiles/nixpics/Wallpapers/berseks_blur.png";
     };
   };
  }

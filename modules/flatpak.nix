@@ -12,6 +12,7 @@
       { appId = "ru.linux_gaming.PortProton"; origin = "flathub"; }
       { appId = "org.gnome.SimpleScan"; origin = "flathub"; }
       { appId = "com.github.tchx84.Flatseal"; origin = "flathub"; }
+      { appId = "org.vinegarhq.Sober"; origin = "flathub"; }
     ];
   };
   systemd.services.flatpak-managed-install = {

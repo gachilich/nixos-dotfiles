@@ -48,7 +48,7 @@ programs.niri = {
           }
           focus-ring { off; }
           border {
-              width 4 4 4 4
+              width 4
               active-color "#45707a"
               inactive-color "#a89984"
           }
