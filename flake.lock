@@ -1744,16 +1744,17 @@
         "vicinae": "vicinae_2"
       },
       "locked": {
-        "lastModified": 1788877077,
-        "narHash": "sha256-Os614eK4hYC8l9cECt2zBiQbrdv+9q2AyrliHfiEf5A=",
-        "owner": "vicinaehq",
-        "repo": "extensions",
-        "rev": "ee117bc64f341ed71b4a27e311f343b12a75f43d",
+        "lastModified": 1789147573,
+        "narHash": "sha256-r6RUUk1hgDkGe9DfAAVPTIE/BiZqHGbfWQpQLqDPJWk=",
+        "owner": "gachilich",
+        "repo": "extensions-niri",
+        "rev": "f398c9c8da6aa371175233144d426b55244b4bef",
         "type": "github"
       },
       "original": {
-        "owner": "vicinaehq",
-        "repo": "extensions",
+        "owner": "gachilich",
+        "ref": "awww-niri-switcher",
+        "repo": "extensions-niri",
         "type": "github"
       }
     },

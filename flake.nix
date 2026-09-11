@@ -44,7 +44,7 @@
 
     vicinae.url = "github:vicinaehq/vicinae";
 
-    vicinae-extensions.url = "github:gachilich/extensions-niri/tree/awww-niri-switcher";
+    vicinae-extensions.url = "github:gachilich/extensions-niri/awww-niri-switcher";
 
     areofyl-fetch.url = "github:areofyl/fetch";
 
