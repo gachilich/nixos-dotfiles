@@ -48,7 +48,7 @@ programs.niri = {
           }
           focus-ring { off; }
           border {
-              width 4
+              width 2
               active-color "#45707a"
               inactive-color "#a89984"
           }
@@ -189,7 +189,7 @@ programs.niri = {
       spawn-at-startup "zen-twilight"
       spawn-at-startup "spotify"
       spawn-at-startup "vesktop"
-      spawn-at-startup "vicine" "server"
+      spawn-at-startup "vicinae" "server"
       spawn-at-startup "awww-daemon"
       spawn-at-startup "awww-daemon" "--namespace" "backdrop"
 

@@ -38,5 +38,6 @@ in
     yabridgectl
     vital
     wineWow64Packages.yabridge
+    tuxguitar
   ];
 }

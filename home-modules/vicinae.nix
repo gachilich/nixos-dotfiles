@@ -49,7 +49,7 @@
     extensions = with inputs.vicinae-extensions.packages.${pkgs.stdenv.hostPlatform.system}; [
       nix
       power-profile
-      awww-switcher
+      awww-niri-switcher
       protondb-search
       aria2-manager
     ];

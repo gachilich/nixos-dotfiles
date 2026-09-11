@@ -22,9 +22,12 @@
     btop
     mpc
     strawberry
+    kid3
+    spotiflac
     aria2
     yt-dlp
     inputs.helium.packages.${stdenv.hostPlatform.system}.default
+    codex
   ];
 
   programs.localsend = {

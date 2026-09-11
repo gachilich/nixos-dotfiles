@@ -10,6 +10,7 @@
     soundcardPciId = "";
 
     rtirq.enable = true;
+    rtcqs.enable = true;
 
     das_watchdog.enable = true;
   };
