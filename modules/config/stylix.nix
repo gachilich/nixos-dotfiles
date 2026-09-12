@@ -3,7 +3,6 @@
   stylix = {
     enable = true;
     polarity = "light";
-    image = ../../nixpics/Wallpapers/berseks.png;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-light-soft.yaml";
     targets.grub.enable = false;
     opacity = {
@@ -42,7 +41,6 @@
   specialisation.dark.configuration = {
     stylix = {
       polarity = pkgs.lib.mkForce "dark";
-      image = lib.mkForce ../../nixpics/Wallpapers/nix-gray.png;
       base16Scheme = pkgs.lib.mkForce "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
     };
   };

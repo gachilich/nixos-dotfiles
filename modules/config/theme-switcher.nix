@@ -1,25 +1,10 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 
 let
-  wallpaperLight = "/home/gachilich/nixos-dotfiles/nixpics/Wallpapers/artur.png";
-  wallpaperLightBlur = "/home/gachilich/nixos-dotfiles/nixpics/Wallpapers/berseks_blur.png";
-  wallpaperDark  = "/home/gachilich/nixos-dotfiles/nixpics/Wallpapers/tux.png";
-  wallpaperDarkBlur  = "/home/gachilich/nixos-dotfiles/nixpics/Wallpapers/gruvcity_blur.png";
-
-  appsToRestart = [
-    { pname = "kitty";   bin = "/etc/profiles/per-user/gachilich/bin/kitty"; }
-    { pname = "spotify"; bin = "/etc/profiles/per-user/gachilich/bin/spotify"; }
-    { pname = "zen-twilight"; bin = "/etc/profiles/per-user/gachilich/bin/zen-twilight"; }
-  ];
-
-  restartCmds = lib.concatMapStringsSep "\n" (app: ''
-    if pgrep -x "${app.pname}" > /dev/null 2>&1; then
-      echo "  перезапускаю ${app.pname}..."
-      pkill -x "${app.pname}" || true
-      sleep 0.8
-      setsid -f "${app.bin}" > /dev/null 2>&1 &
-    fi
-  '') appsToRestart;
+  wallpaperLight = "/home/gachilich/nixos-dotfiles/nixpics/wallpapers/artur.png";
+  wallpaperLightBlur = "/home/gachilich/nixos-dotfiles/nixpics/wallpapers/blur/berseks_blur.png";
+  wallpaperDark  = "/home/gachilich/nixos-dotfiles/nixpics/wallpapers/tux.png";
+  wallpaperDarkBlur  = "/home/gachilich/nixos-dotfiles/nixpics/wallpapers/blur/gruvcity_blur.png";
 
   switchTheme = pkgs.writeShellScriptBin "switch-theme" ''
     set -euo pipefail
@@ -27,44 +12,33 @@ let
     SYSTEM_BASE="/nix/var/nix/profiles/system"
 
     case "''${1:-}" in
-
       light)
-        echo "→ Активирую светлую тему..."
-
-        sudo "$SYSTEM_BASE/bin/switch-to-configuration" test
-
-        echo "→ Устанавливаю светлые обои..."
-        sleep 1
-        awww img "${wallpaperLight}" --transition-type wipe --transition-duration 3
-        awww img "${wallpaperLightBlur}" --namespace backdrop --transition-type wipe --transition-duration 3
-
-        echo "→ Перезапускаю приложения..."
-        ${restartCmds}
-        echo "✓ Светлая тема активирована"
+        theme="светлую"
+        switch_to="$SYSTEM_BASE/bin/switch-to-configuration"
+        wallpaper="${wallpaperLight}"
+        wallpaper_blur="${wallpaperLightBlur}"
         ;;
-
       dark)
-        echo "→ Активирую тёмную тему..."
-
-        DARK_STC="$SYSTEM_BASE/specialisation/dark/bin/switch-to-configuration"
-
-        sudo "$DARK_STC" test
-
-        echo "→ Устанавливаю тёмные обои..."
-        sleep 1
-        awww img "${wallpaperDark}" --transition-type wipe --transition-duration 3
-        awww img "${wallpaperDarkBlur}" --namespace backdrop --transition-type wipe --transition-duration 3
-
-        echo "→ Перезапускаю приложения..."
-        ${restartCmds}
-        echo "✓ Тёмная тема активирована"
+        theme="тёмную"
+        switch_to="$SYSTEM_BASE/specialisation/dark/bin/switch-to-configuration"
+        wallpaper="${wallpaperDark}"
+        wallpaper_blur="${wallpaperDarkBlur}"
         ;;
-
       *)
         echo "Использование: switch-theme <light|dark>" >&2
         exit 1
         ;;
     esac
+
+    echo "→ Активирую ''${theme} тему..."
+    sudo "$switch_to" test
+
+    echo "→ Устанавливаю ''${theme} обои..."
+    sleep 1
+    awww img "$wallpaper" --transition-type wipe --transition-duration 3
+    awww img "$wallpaper_blur" --namespace backdrop --transition-type wipe --transition-duration 3
+
+    echo "✓ ''${theme^} тема активирована"
   '';
 
 in
