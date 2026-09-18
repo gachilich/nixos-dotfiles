@@ -1,5 +1,10 @@
-{ ... }:
+{ config, ... }:
 {
+  home.file.".local/bin/move-torrents.sh" = {
+    source = ../scripts/move-torrents.sh;
+    executable = true;
+  };
+
 programs.niri = {
     config = ''
       input {
@@ -189,9 +194,9 @@ programs.niri = {
       spawn-at-startup "zen-twilight"
       spawn-at-startup "spotify"
       spawn-at-startup "vesktop"
-      spawn-at-startup "vicinae" "server"
       spawn-at-startup "awww-daemon"
       spawn-at-startup "awww-daemon" "--namespace" "backdrop"
+      spawn-at-startup "${config.home.homeDirectory}/.local/bin/move-torrents.sh" "--watch" "${config.home.homeDirectory}/Downloads"
 
       window-rule {
           match app-id="zen-twilight"

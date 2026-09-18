@@ -51,7 +51,7 @@
       power-profile
       awww-niri-switcher
       protondb-search
-      aria2-manager
+      process-manager
     ];
   };
 }
