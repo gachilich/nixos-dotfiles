@@ -190,7 +190,7 @@ programs.niri = {
       workspace "DiSpot"
       workspace "browser"
 
-      spawn-at-startup "noctalia"
+
       spawn-at-startup "zen-twilight"
       spawn-at-startup "spotify"
       spawn-at-startup "vesktop"

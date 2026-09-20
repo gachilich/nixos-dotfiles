@@ -28,6 +28,7 @@
     yt-dlp
     inputs.helium.packages.${stdenv.hostPlatform.system}.default
     codex
+    vesta-viewer
   ];
 
   programs.localsend = {

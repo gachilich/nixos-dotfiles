@@ -75,7 +75,7 @@
   users.users.gachilich = {
     isNormalUser = true;
     shell = pkgs.fish;
-    extraGroups = [ "wheel" "audio" "input" "sound" "video" "realtime" "i2c" "docker" "scanner" "lp" "kvm" "libvirtd"];
+    extraGroups = [ "wheel" "audio" "input" "sound" "video" "realtime" "i2c" "scanner" "lp" "kvm" "libvirtd"];
     packages = with pkgs; [ tree ];
   };
 
@@ -92,7 +92,6 @@
     jq
     nix-index
     nh
-    nodejs_26
   ];
 
   services.upower.enable = true;

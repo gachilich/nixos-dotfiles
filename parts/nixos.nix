@@ -19,7 +19,6 @@
         # inputs.mangowm.nixosModules.mango
         inputs.niri.nixosModules.niri
         inputs.stylix.nixosModules.stylix
-        inputs.musnix.nixosModules.musnix
         # inputs.nix-cachyos-kernel.nixosModules.cachyos
         ./overlays.nix
       ];

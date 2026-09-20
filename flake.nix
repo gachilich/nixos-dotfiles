@@ -38,8 +38,6 @@
 
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
 
-    musnix.url = "github:musnix/musnix";
-
     stylix.url = "github:nix-community/stylix";
 
     vicinae.url = "github:vicinaehq/vicinae";
