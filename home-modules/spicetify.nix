@@ -127,8 +127,6 @@ in
       listPlaylistsWithSong
       history
       lastfm
-      betterGenres
-      savePlaylists
       aiBandBlocker
     ];
   };

@@ -1,11 +1,6 @@
 { config, ... }:
 {
-  home.file.".local/bin/move-torrents.sh" = {
-    source = ../scripts/move-torrents.sh;
-    executable = true;
-  };
-
-programs.niri = {
+  programs.niri = {
     config = ''
       input {
           keyboard {
@@ -118,8 +113,11 @@ programs.niri = {
           Mod+J { focus-window-down; }
           Mod+K { focus-window-up; }
           Mod+L { focus-column-right; }
+          Mod+H { focus-column-left; }
           Mod+Right { focus-column-right; }
           Mod+Left { focus-column-left; }
+          Mod+Up { focus-column-up; }
+          Mod+Down { focus-column-down; }
           Mod+WheelScrollLeft { focus-column-left; }
           Mod+WheelScrollRight { focus-column-right; }
 
@@ -190,13 +188,12 @@ programs.niri = {
       workspace "DiSpot"
       workspace "browser"
 
-
+      spawn-at-startup "noctalia"
       spawn-at-startup "zen-twilight"
       spawn-at-startup "spotify"
       spawn-at-startup "vesktop"
       spawn-at-startup "awww-daemon"
       spawn-at-startup "awww-daemon" "--namespace" "backdrop"
-      spawn-at-startup "${config.home.homeDirectory}/.local/bin/move-torrents.sh" "--watch" "${config.home.homeDirectory}/Downloads"
 
       window-rule {
           match app-id="zen-twilight"
