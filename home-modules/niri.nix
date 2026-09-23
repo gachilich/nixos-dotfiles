@@ -116,8 +116,6 @@
           Mod+H { focus-column-left; }
           Mod+Right { focus-column-right; }
           Mod+Left { focus-column-left; }
-          Mod+Up { focus-column-up; }
-          Mod+Down { focus-column-down; }
           Mod+WheelScrollLeft { focus-column-left; }
           Mod+WheelScrollRight { focus-column-right; }
 
@@ -188,7 +186,6 @@
       workspace "DiSpot"
       workspace "browser"
 
-      spawn-at-startup "noctalia"
       spawn-at-startup "zen-twilight"
       spawn-at-startup "spotify"
       spawn-at-startup "vesktop"
