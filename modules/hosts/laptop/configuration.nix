@@ -95,6 +95,7 @@
   ];
 
   services.upower.enable = true;
+  services.power-profiles-daemon.enable = true;
 
   fonts.packages = with pkgs; [
     noto-fonts

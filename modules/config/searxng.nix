@@ -34,6 +34,14 @@
         autocomplete = "duckduckgo";
         formats = [ "html" "json" ];
       };
+
+      enabled_plugins = [
+        "Calculator"
+        "Hash plugin"
+        "Open Access DOI rewrite"
+        "Unit converter plugin"
+        "Tracker URL remover"
+      ];
     };
 
     environmentFile = "/var/lib/searx/searx-secret";
