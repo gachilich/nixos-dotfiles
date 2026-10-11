@@ -162,17 +162,18 @@ menupopup {
   --t24-warning: #b47109;
   --t24-font: "Maple Mono NF SemiBold", monospace;
   --t24-font-size: 12pt;
+  --t24-radius: 4px;
 }
 /* text24: original Zen styling inspired by spicetify/text and system24.
  * Palette and font are injected by text24.nix from Stylix.
  * Keep native controls, favicons, audio indicators and compact-mode behavior.
  */
 :root:root {
-  --zen-border-radius: 0px !important;
-  --zen-webview-border-radius: 0px !important;
-  --tab-border-radius: 0px !important;
-  --toolbarbutton-border-radius: 0px !important;
-  --arrowpanel-border-radius: 0px !important;
+  --zen-border-radius: var(--t24-radius) !important;
+  --zen-webview-border-radius: var(--t24-radius) !important;
+  --tab-border-radius: var(--t24-radius) !important;
+  --toolbarbutton-border-radius: var(--t24-radius) !important;
+  --arrowpanel-border-radius: var(--t24-radius) !important;
   --zen-colors-primary: var(--t24-panel) !important;
   --zen-colors-secondary: var(--t24-hover) !important;
   --zen-colors-tertiary: var(--t24-bg) !important;
@@ -231,7 +232,7 @@ menupopup {
 
 #navigator-toolbox {
   border: 1px solid var(--t24-border) !important;
-  border-radius: 0 !important;
+  border-radius: var(--t24-radius) !important;
 }
 
 #nav-bar {
@@ -248,7 +249,7 @@ menupopup {
 }
 
 #tabbrowser-tabpanels .browserSidebarContainer {
-  border-radius: 0 !important;
+  border-radius: var(--t24-radius) !important;
   box-shadow: inset 0 0 0 1px var(--t24-border) !important;
 }
 
@@ -265,7 +266,7 @@ findbar {
 #tabbrowser-tabs .tab-background {
   border: 1px solid transparent !important;
   border-inline-start: 2px solid transparent !important;
-  border-radius: 0 !important;
+  border-radius: var(--t24-radius) !important;
   background: transparent !important;
   box-shadow: none !important;
 }
@@ -296,7 +297,7 @@ findbar {
 }
 
 .tab-group-label {
-  border-radius: 0 !important;
+  border-radius: var(--t24-radius) !important;
   font-family: var(--t24-font) !important;
 }
 
@@ -305,7 +306,7 @@ findbar {
 #urlbar-background {
   background: var(--t24-panel) !important;
   border: 1px solid var(--t24-border) !important;
-  border-radius: 0 !important;
+  border-radius: var(--t24-radius) !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
 }
@@ -327,7 +328,7 @@ findbar {
 .urlbarView-row,
 .urlbarView-row-inner,
 .searchbar-engine-one-off-item {
-  border-radius: 0 !important;
+  border-radius: var(--t24-radius) !important;
 }
 
 .urlbarView-row:is([selected], :hover) .urlbarView-row-inner {
@@ -344,7 +345,7 @@ panel::part(content),
 menupopup::part(content),
 tooltip {
   border: 1px solid var(--t24-border) !important;
-  border-radius: 0 !important;
+  border-radius: var(--t24-radius) !important;
   background: var(--t24-panel) !important;
   color: var(--t24-fg) !important;
   box-shadow: none !important;
@@ -355,7 +356,7 @@ panel {
   --panel-background: var(--t24-panel) !important;
   --panel-color: var(--t24-fg) !important;
   --panel-border-color: var(--t24-border) !important;
-  --panel-border-radius: 0px !important;
+  --panel-border-radius: var(--t24-radius) !important;
 }
 
 menuitem,
@@ -363,7 +364,7 @@ menu,
 .subviewbutton,
 .toolbarbutton-icon,
 .toolbarbutton-badge-stack {
-  border-radius: 0 !important;
+  border-radius: var(--t24-radius) !important;
 }
 
 menupopup :is(menu, menuitem)[_moz-menuactive="true"] {
@@ -375,7 +376,7 @@ findbar {
   background: var(--t24-panel) !important;
   color: var(--t24-fg) !important;
   border-top: 1px solid var(--t24-border) !important;
-  border-radius: 0 !important;
+  border-radius: var(--t24-radius) !important;
   box-shadow: none !important;
 }
 
@@ -383,7 +384,7 @@ findbar {
   background: var(--t24-bg) !important;
   color: var(--t24-fg) !important;
   border: 1px solid var(--t24-border) !important;
-  border-radius: 0 !important;
+  border-radius: var(--t24-radius) !important;
 }
 
 .findbar-textbox:focus {

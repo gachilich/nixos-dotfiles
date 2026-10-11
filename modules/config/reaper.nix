@@ -37,6 +37,7 @@ in
     yabridge
     yabridgectl
     vital
+    chow-tape-model
     wineWow64Packages.yabridge
     tuxguitar
   ];

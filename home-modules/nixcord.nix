@@ -35,6 +35,32 @@ in
       [class*="codeView"][class*="hljs"] * {
         color: ${c.base05} !important;
       }
+
+      /* Match Noctalia's current bar/dock radius: 4px. */
+      :root {
+        --radius-none: 0px !important;
+        --radius-xs: 4px !important;
+        --radius-sm: 4px !important;
+        --radius-md: 4px !important;
+        --radius-lg: 4px !important;
+        --radius-xl: 4px !important;
+        --radius-xxl: 4px !important;
+        --radius-round: 9999px !important;
+      }
+
+      body,
+      #app-mount {
+        --unrounding: off !important;
+        --round-pfp: off !important;
+        --radius-none: 0px !important;
+        --radius-xs: 4px !important;
+        --radius-sm: 4px !important;
+        --radius-md: 4px !important;
+        --radius-lg: 4px !important;
+        --radius-xl: 4px !important;
+        --radius-xxl: 4px !important;
+        --radius-round: 9999px !important;
+      }
     '';
 
   config = {

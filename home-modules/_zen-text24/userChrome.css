@@ -3,11 +3,11 @@
  * Keep native controls, favicons, audio indicators and compact-mode behavior.
  */
 :root:root {
-  --zen-border-radius: 0px !important;
-  --zen-webview-border-radius: 0px !important;
-  --tab-border-radius: 0px !important;
-  --toolbarbutton-border-radius: 0px !important;
-  --arrowpanel-border-radius: 0px !important;
+  --zen-border-radius: var(--t24-radius) !important;
+  --zen-webview-border-radius: var(--t24-radius) !important;
+  --tab-border-radius: var(--t24-radius) !important;
+  --toolbarbutton-border-radius: var(--t24-radius) !important;
+  --arrowpanel-border-radius: var(--t24-radius) !important;
   --zen-colors-primary: var(--t24-panel) !important;
   --zen-colors-secondary: var(--t24-hover) !important;
   --zen-colors-tertiary: var(--t24-bg) !important;
@@ -65,16 +65,19 @@
 }
 
 #navigator-toolbox {
-  border: 1px solid var(--t24-border) !important;
-  border-radius: 0 !important;
+  border: none !important;
+  border-radius: var(--t24-radius) !important;
 }
 
 #nav-bar {
-  border-bottom: 1px solid var(--t24-border) !important;
+  border: none !important;
+  /* Super Sleek UI sets a fixed toolbar height. Allow room for the mono font. */
+  height: auto !important;
+  min-height: 44px !important;
 }
 
 #zen-sidebar-foot-buttons {
-  border-top: 1px solid var(--t24-border) !important;
+  border-top: none !important;
   padding-top: 6px !important;
 }
 
@@ -83,8 +86,8 @@
 }
 
 #tabbrowser-tabpanels .browserSidebarContainer {
-  border-radius: 0 !important;
-  box-shadow: inset 0 0 0 1px var(--t24-border) !important;
+  border-radius: var(--t24-radius) !important;
+  box-shadow: none !important;
 }
 
 /* Inherit Stylix's monospace font throughout browser chrome only. */
@@ -100,7 +103,7 @@ findbar {
 #tabbrowser-tabs .tab-background {
   border: 1px solid transparent !important;
   border-inline-start: 2px solid transparent !important;
-  border-radius: 0 !important;
+  border-radius: var(--t24-radius) !important;
   background: transparent !important;
   box-shadow: none !important;
 }
@@ -131,16 +134,33 @@ findbar {
 }
 
 .tab-group-label {
-  border-radius: 0 !important;
+  border-radius: var(--t24-radius) !important;
   font-family: var(--t24-font) !important;
 }
 
 /* Address bar as a command field; preserve security / permission indicators. */
+#urlbar-container {
+  --urlbar-container-height: 40px !important;
+  --urlbar-min-height: 36px !important;
+  min-height: 40px !important;
+}
+
+/* Leave the expanded search panel's height under Zen's control. */
+#urlbar:not([breakout-extend="true"]) {
+  min-height: 36px !important;
+}
+
+#urlbar .urlbar-input-container {
+  min-height: 36px !important;
+  box-sizing: border-box !important;
+  padding-block: 4px !important;
+}
+
 #urlbar .urlbar-background,
 #urlbar-background {
   background: var(--t24-panel) !important;
   border: 1px solid var(--t24-border) !important;
-  border-radius: 0 !important;
+  border-radius: var(--t24-radius) !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
 }
@@ -151,6 +171,8 @@ findbar {
 
 #urlbar-input {
   font-family: var(--t24-font) !important;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
   color: var(--t24-fg) !important;
 }
 
@@ -162,7 +184,7 @@ findbar {
 .urlbarView-row,
 .urlbarView-row-inner,
 .searchbar-engine-one-off-item {
-  border-radius: 0 !important;
+  border-radius: var(--t24-radius) !important;
 }
 
 .urlbarView-row:is([selected], :hover) .urlbarView-row-inner {
@@ -179,7 +201,7 @@ panel::part(content),
 menupopup::part(content),
 tooltip {
   border: 1px solid var(--t24-border) !important;
-  border-radius: 0 !important;
+  border-radius: var(--t24-radius) !important;
   background: var(--t24-panel) !important;
   color: var(--t24-fg) !important;
   box-shadow: none !important;
@@ -190,7 +212,7 @@ panel {
   --panel-background: var(--t24-panel) !important;
   --panel-color: var(--t24-fg) !important;
   --panel-border-color: var(--t24-border) !important;
-  --panel-border-radius: 0px !important;
+  --panel-border-radius: var(--t24-radius) !important;
 }
 
 menuitem,
@@ -198,7 +220,7 @@ menu,
 .subviewbutton,
 .toolbarbutton-icon,
 .toolbarbutton-badge-stack {
-  border-radius: 0 !important;
+  border-radius: var(--t24-radius) !important;
 }
 
 menupopup :is(menu, menuitem)[_moz-menuactive="true"] {
@@ -210,7 +232,7 @@ findbar {
   background: var(--t24-panel) !important;
   color: var(--t24-fg) !important;
   border-top: 1px solid var(--t24-border) !important;
-  border-radius: 0 !important;
+  border-radius: var(--t24-radius) !important;
   box-shadow: none !important;
 }
 
@@ -218,7 +240,7 @@ findbar {
   background: var(--t24-bg) !important;
   color: var(--t24-fg) !important;
   border: 1px solid var(--t24-border) !important;
-  border-radius: 0 !important;
+  border-radius: var(--t24-radius) !important;
 }
 
 .findbar-textbox:focus {

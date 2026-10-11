@@ -82,6 +82,12 @@ let
       box-shadow: 0 0 0 1px #${config.lib.stylix.colors.base0D} !important;
     }
   '';
+  radiusCss = ''
+    /* Match Noctalia's current bar/dock radius: radius = 4. */
+    :root {
+      --border-radius: 4px !important;
+    }
+  '';
 in
 {
   imports = [
@@ -96,7 +102,8 @@ in
         (spicePkgs.themes.text.additionalCss or "")
         + progressBarCss
         + lyricsCss
-        + searchCss;
+        + searchCss
+        + radiusCss;
     };
 
     colorScheme = "custom";

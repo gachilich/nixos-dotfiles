@@ -23,7 +23,7 @@
     background: var(--t24-panel) !important;
     color: var(--t24-fg) !important;
     border: 1px solid var(--t24-border) !important;
-    border-radius: 0 !important;
+    border-radius: var(--t24-radius) !important;
     box-shadow: none !important;
     font-family: var(--t24-font) !important;
   }
