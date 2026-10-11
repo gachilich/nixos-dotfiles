@@ -3,7 +3,7 @@ let
   firefox-addons = inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system};
 in
 {
-  imports = [ inputs.zen-browser.homeModules.twilight ];
+  imports = [ inputs.zen-browser.homeModules.twilight ./_zen-text24/text24.nix ];
 
   programs.zen-browser = {
     enable = true;

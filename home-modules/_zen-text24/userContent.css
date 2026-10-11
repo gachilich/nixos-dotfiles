@@ -1,0 +1,30 @@
+/* Strictly scoped to built-in blank/home pages; websites keep their own CSS. */
+@-moz-document url("about:home"), url("about:newtab"), url("about:blank") {
+  :root:root {
+    --newtab-background-color: var(--t24-bg) !important;
+    --newtab-text-primary-color: var(--t24-fg) !important;
+    --newtab-text-secondary-color: var(--t24-muted) !important;
+    --newtab-element-hover-color: var(--t24-hover) !important;
+    --newtab-primary-action-background: var(--t24-accent) !important;
+    background: var(--t24-bg) !important;
+    color: var(--t24-fg) !important;
+    font-family: var(--t24-font) !important;
+  }
+
+  body {
+    background: var(--t24-bg) !important;
+    color: var(--t24-fg) !important;
+    font-family: var(--t24-font) !important;
+  }
+
+  .search-wrapper .search-handoff-button,
+  .search-wrapper input,
+  .top-site-outer .tile {
+    background: var(--t24-panel) !important;
+    color: var(--t24-fg) !important;
+    border: 1px solid var(--t24-border) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    font-family: var(--t24-font) !important;
+  }
+}

@@ -1,0 +1,237 @@
+/* text24: original Zen styling inspired by spicetify/text and system24.
+ * Palette and font are injected by text24.nix from Stylix.
+ * Keep native controls, favicons, audio indicators and compact-mode behavior.
+ */
+:root:root {
+  --zen-border-radius: 0px !important;
+  --zen-webview-border-radius: 0px !important;
+  --tab-border-radius: 0px !important;
+  --toolbarbutton-border-radius: 0px !important;
+  --arrowpanel-border-radius: 0px !important;
+  --zen-colors-primary: var(--t24-panel) !important;
+  --zen-colors-secondary: var(--t24-hover) !important;
+  --zen-colors-tertiary: var(--t24-bg) !important;
+  --zen-colors-border: var(--t24-border) !important;
+  --zen-primary-color: var(--t24-accent) !important;
+  --zen-main-browser-background: var(--t24-bg) !important;
+  --zen-main-browser-background-toolbar: var(--t24-bg) !important;
+  --zen-themed-toolbar-bg: var(--t24-bg) !important;
+  --zen-themed-toolbar-bg-transparent: var(--t24-bg) !important;
+  --toolbar-bgcolor: var(--t24-bg) !important;
+  --toolbox-bgcolor-inactive: var(--t24-bg) !important;
+  --lwt-accent-color: var(--t24-bg) !important;
+  --lwt-text-color: var(--t24-fg) !important;
+  --toolbar-color: var(--t24-fg) !important;
+  --toolbarbutton-icon-fill: var(--t24-fg) !important;
+  --toolbarbutton-hover-background: var(--t24-hover) !important;
+  --toolbarbutton-active-background: var(--t24-hover) !important;
+  --toolbar-field-background-color: var(--t24-panel) !important;
+  --toolbar-field-focus-background-color: var(--t24-panel) !important;
+  --toolbar-field-color: var(--t24-fg) !important;
+  --toolbar-field-focus-color: var(--t24-fg) !important;
+  --toolbar-field-border-color: var(--t24-border) !important;
+  --toolbar-field-focus-border-color: var(--t24-accent) !important;
+  --tab-selected-bgcolor: var(--t24-hover) !important;
+  --tab-selected-textcolor: var(--t24-fg) !important;
+  --arrowpanel-background: var(--t24-panel) !important;
+  --arrowpanel-color: var(--t24-fg) !important;
+  --arrowpanel-border-color: var(--t24-border) !important;
+  --panel-separator-color: var(--t24-border) !important;
+  --sidebar-background-color: var(--t24-bg) !important;
+  --sidebar-text-color: var(--t24-fg) !important;
+  --lwt-sidebar-background-color: var(--t24-bg) !important;
+  --lwt-sidebar-text-color: var(--t24-fg) !important;
+  --focus-outline-color: var(--t24-accent) !important;
+  font-family: var(--t24-font) !important;
+  font-size: var(--t24-font-size) !important;
+}
+
+/* Flat panels with thin terminal-style separators. */
+#main-window,
+#zen-browser-background,
+#zen-toolbar-background {
+  --zen-main-browser-background: var(--t24-bg) !important;
+  --zen-main-browser-background-toolbar: var(--t24-bg) !important;
+  background: var(--t24-bg) !important;
+}
+
+#navigator-toolbox,
+#nav-bar,
+#PersonalToolbar,
+#sidebar-box {
+  background: var(--t24-bg) !important;
+  color: var(--t24-fg) !important;
+  box-shadow: none !important;
+}
+
+#navigator-toolbox {
+  border: 1px solid var(--t24-border) !important;
+  border-radius: 0 !important;
+}
+
+#nav-bar {
+  border-bottom: 1px solid var(--t24-border) !important;
+}
+
+#zen-sidebar-foot-buttons {
+  border-top: 1px solid var(--t24-border) !important;
+  padding-top: 6px !important;
+}
+
+#zen-workspaces-button {
+  background: var(--t24-bg) !important;
+}
+
+#tabbrowser-tabpanels .browserSidebarContainer {
+  border-radius: 0 !important;
+  box-shadow: inset 0 0 0 1px var(--t24-border) !important;
+}
+
+/* Inherit Stylix's monospace font throughout browser chrome only. */
+#navigator-toolbox :is(label, description, input, button, toolbarbutton),
+panel,
+menupopup,
+tooltip,
+findbar {
+  font-family: var(--t24-font) !important;
+}
+
+/* Text-first tab list: no pills, a clear active edge, visible native icons. */
+#tabbrowser-tabs .tab-background {
+  border: 1px solid transparent !important;
+  border-inline-start: 2px solid transparent !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#tabbrowser-tabs .tabbrowser-tab:hover .tab-background {
+  background: var(--t24-panel) !important;
+  border-color: var(--t24-border) !important;
+}
+
+#tabbrowser-tabs .tabbrowser-tab:is([selected], [multiselected]) .tab-background {
+  background: var(--t24-hover) !important;
+  border-color: var(--t24-border) !important;
+  border-inline-start-color: var(--t24-accent) !important;
+}
+
+#tabbrowser-tabs .tabbrowser-tab[selected] .tab-label {
+  color: var(--t24-accent) !important;
+  font-weight: 600 !important;
+}
+
+#tabbrowser-tabs .tabbrowser-tab[pending] .tab-label {
+  color: var(--t24-muted) !important;
+  font-style: italic !important;
+}
+
+#tabbrowser-tabs .tabbrowser-tab[attention] .tab-background {
+  border-bottom-color: var(--t24-warning) !important;
+}
+
+.tab-group-label {
+  border-radius: 0 !important;
+  font-family: var(--t24-font) !important;
+}
+
+/* Address bar as a command field; preserve security / permission indicators. */
+#urlbar .urlbar-background,
+#urlbar-background {
+  background: var(--t24-panel) !important;
+  border: 1px solid var(--t24-border) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+#urlbar[focused] :is(.urlbar-background, #urlbar-background) {
+  border-color: var(--t24-accent) !important;
+}
+
+#urlbar-input {
+  font-family: var(--t24-font) !important;
+  color: var(--t24-fg) !important;
+}
+
+#urlbar-input::selection {
+  background: var(--t24-accent) !important;
+  color: var(--t24-bg) !important;
+}
+
+.urlbarView-row,
+.urlbarView-row-inner,
+.searchbar-engine-one-off-item {
+  border-radius: 0 !important;
+}
+
+.urlbarView-row:is([selected], :hover) .urlbarView-row-inner {
+  background: var(--t24-hover) !important;
+  color: var(--t24-fg) !important;
+}
+
+.urlbarView-url {
+  color: var(--t24-accent) !important;
+}
+
+/* Matching menus and find field; keep focus outlines and disabled states. */
+panel::part(content),
+menupopup::part(content),
+tooltip {
+  border: 1px solid var(--t24-border) !important;
+  border-radius: 0 !important;
+  background: var(--t24-panel) !important;
+  color: var(--t24-fg) !important;
+  box-shadow: none !important;
+}
+
+menupopup,
+panel {
+  --panel-background: var(--t24-panel) !important;
+  --panel-color: var(--t24-fg) !important;
+  --panel-border-color: var(--t24-border) !important;
+  --panel-border-radius: 0px !important;
+}
+
+menuitem,
+menu,
+.subviewbutton,
+.toolbarbutton-icon,
+.toolbarbutton-badge-stack {
+  border-radius: 0 !important;
+}
+
+menupopup :is(menu, menuitem)[_moz-menuactive="true"] {
+  background: var(--t24-hover) !important;
+  color: var(--t24-fg) !important;
+}
+
+findbar {
+  background: var(--t24-panel) !important;
+  color: var(--t24-fg) !important;
+  border-top: 1px solid var(--t24-border) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.findbar-textbox {
+  background: var(--t24-bg) !important;
+  color: var(--t24-fg) !important;
+  border: 1px solid var(--t24-border) !important;
+  border-radius: 0 !important;
+}
+
+.findbar-textbox:focus {
+  border-color: var(--t24-accent) !important;
+}
+
+.findbar-textbox[status="notfound"] {
+  border-color: var(--t24-error) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tab-background,
+  .urlbar-background {
+    transition: none !important;
+  }
+}
