@@ -37,6 +37,8 @@ in
     yt-dlp
     inputs.helium.packages.${stdenv.hostPlatform.system}.default
     codex
+    claude-code
+    python3
     vesta-viewer
     oldPkgs.vscode
   ];

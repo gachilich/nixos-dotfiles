@@ -31,6 +31,7 @@ in
         ublock-origin
         bitwarden
         return-youtube-dislikes
+        darkreader
       ];
       mods = [
         "f4866f39-cfd6-4498-ab92-54213b8279dc" # Animations Plus

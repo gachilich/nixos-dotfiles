@@ -85,6 +85,17 @@
   background: var(--t24-bg) !important;
 }
 
+/* Keep Zen's sidebar surfaces flat; do not paint an extra strip around them. */
+#zen-sidebar-top-buttons,
+#zen-sidebar-foot-buttons,
+#zen-tabs-wrapper,
+#zen-sidebar-panels,
+#zen-sidebar-panel-wrapper {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
 #tabbrowser-tabpanels .browserSidebarContainer {
   border-radius: var(--t24-radius) !important;
   box-shadow: none !important;
@@ -139,27 +150,46 @@ findbar {
 }
 
 /* Address bar as a command field; preserve security / permission indicators. */
+/* Super Sleek UI paints the outer URL bar, not just its background child. */
+:root #urlbar:is([breakout][breakout-extend], [breakout][usertyping][focused]) {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  border-radius: var(--t24-radius) !important;
+}
+
+:root #urlbar:is([breakout][breakout-extend], [breakout][usertyping][focused])::after {
+  content: none !important;
+}
+
+/* Compact mode gives the floating toolbox a separate outer shadow. */
+:root[zen-compact-mode="true"] #navigator-toolbox {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 #urlbar-container {
-  --urlbar-container-height: 40px !important;
-  --urlbar-min-height: 36px !important;
-  min-height: 40px !important;
+  --urlbar-container-height: 32px !important;
+  --urlbar-min-height: 32px !important;
+  min-height: 32px !important;
 }
 
 /* Leave the expanded search panel's height under Zen's control. */
 #urlbar:not([breakout-extend="true"]) {
-  min-height: 36px !important;
+  min-height: 32px !important;
 }
 
 #urlbar .urlbar-input-container {
-  min-height: 36px !important;
+  min-height: 32px !important;
   box-sizing: border-box !important;
-  padding-block: 4px !important;
+  padding-block: 0 !important;
 }
 
 #urlbar .urlbar-background,
 #urlbar-background {
   background: var(--t24-panel) !important;
-  border: 1px solid var(--t24-border) !important;
+  border: none !important;
   border-radius: var(--t24-radius) !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
@@ -172,7 +202,8 @@ findbar {
 #urlbar-input {
   font-family: var(--t24-font) !important;
   font-size: 14px !important;
-  line-height: 1.4 !important;
+  line-height: 1.2 !important;
+  padding-block: 0 !important;
   color: var(--t24-fg) !important;
 }
 
