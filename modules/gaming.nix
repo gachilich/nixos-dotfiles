@@ -14,6 +14,7 @@
     mangohud
     prismlauncher
     antimicrox
+    libnotify
   ];
 
   programs.nix-ld.enable = true;

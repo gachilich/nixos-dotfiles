@@ -259,7 +259,9 @@
           overview-open-close { spring damping-ratio=1.0 epsilon=0.0001 stiffness=800; }
       }
 
-      debug { honor-xdg-activation-with-invalid-serial true; }
+      debug {
+        disable-pipewire-dmabuf
+        honor-xdg-activation-with-invalid-serial true; }
     '';
   };
 }

@@ -42,7 +42,6 @@
   services.printing.enable = true;
   hardware.sane.enable = true;
   hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
-
   services.ipp-usb.enable = true;
 
   systemd.oomd.enable = true;
