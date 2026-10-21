@@ -12,9 +12,6 @@ in
   services.gvfs.enable = true;
 
   environment.systemPackages = with pkgs; [
-    (pkgs.callPackage ../../appimage/root.nix {
-      wrapperModules = inputs.wrapper-modules;
-    })
     wl-clipboard
     winetricks
     qimgv
@@ -42,6 +39,7 @@ in
     oldPkgs.vscode
     nodejs_26
     opencode
+    godot
   ];
 
   programs.localsend = {
